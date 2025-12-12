@@ -140,19 +140,21 @@
                         </p>
                     </div>
 
-                    <div class="card-header">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggested Improvements
+                    <div class="card col-span-8">
+                        <div class="card-header">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggested Improvements
+                        </div>
+                        <ul class="improvement-list" id="improvementList">
+                            <!-- Populated via JS -->
+                            <li>
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                                <div>
+                                    <strong>Generating suggestions...</strong><br>
+                                    <span style="color: #bbb;">Please wait while we synthesize the strategy.</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="improvement-list" id="improvementList">
-                        <!-- Populated via JS -->
-                        <li>
-                            <i class="fa-solid fa-spinner fa-spin"></i>
-                            <div>
-                                <strong>Generating suggestions...</strong><br>
-                                <span style="color: #bbb;">Please wait while we synthesize the strategy.</span>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
 
                 <!-- Row 4: Final Verdict -->
@@ -161,11 +163,7 @@
                         <i class="fa-solid fa-robot"></i> FINAL VERDICT
                     </div>
                     <div class="verdict-text" id="verdictText">
-                        "This post has <strong>massive potential</strong> for LinkedIn. The core message is solid,
-                        but the execution feels slightly generic. By sharpening the hook and increasing visual
-                        dynamism in the first 3 seconds, you could easily see a <strong>2-3x lift in
-                            engagement</strong>. It fits the 'Hustle Culture' trend perfectly but needs more
-                        authentic storytelling."
+                        <!-- Populated via JS -->
                     </div>
                     <button class="analyze-btn"
                         style="position: relative; right: auto; top: auto; bottom: auto; background: rgba(255,255,255,0.1); border: 1px solid white;">
