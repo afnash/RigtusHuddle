@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdSage AI | Insights Dashboard</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-brain"></i> AdSage AI
+            </a>
+        </header>
+
+        <main>
+            <!-- Loader Section (Visible Initially) -->
+            <div class="loader-container" id="loader">
+                <div class="neural-loader">
+                    <div class="neural-dot"></div>
+                    <div class="neural-dot"></div>
+                    <div class="neural-dot"></div>
+                </div>
+                <div class="loading-text">Analyzing visuals, tone, and audience fit...</div>
+            </div>
+
+            <!-- Dashboard Grid (Hidden Initially) -->
+            <div class="dashboard-container">
+                <div class="dashboard-grid hidden" id="dashboardResults">
+
+                    <!-- Row 1: Summary -->
+                    <div class="card col-span-8">
+                        <div class="card-header">
+                            <i class="fa-regular fa-file-alt"></i> Content Summary
+                        </div>
+                        <p class="summary-text">
+                            This post leverages a high-contrast, lifestyle-focused visual strategy featuring a Gen-Z
+                            aesthetic. The caption utilizes a "hook-and-deliver" structure, starting with a provocative
+                            question about work-life balance and delivering a productivity hack. The overall vibe is
+                            <strong>motivational yet grounded</strong>, clearly targeting young professionals.
+                        </p>
+                        <div class="tags-container" style="margin-top: 1rem;">
+                            <div class="tag">Lifestyle</div>
+                            <div class="tag">Productivity</div>
+                            <div class="tag">SaaS</div>
+                        </div>
+                    </div>
+
+                    <!-- Tone Analysis -->
+                    <div class="card col-span-4"
+                        style="background: rgba(112, 0, 255, 0.1); border-color: rgba(112, 0, 255, 0.3);">
+                        <div class="card-header">
+                            <i class="fa-solid fa-wave-square"></i> Tone + Emotion
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Inspirational</span>
+                                <span style="color: var(--primary-neon);">88%</span>
+                            </div>
+                            <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Urgent</span>
+                                <span style="color: var(--accent-pink);">60%</span>
+                            </div>
+                            <div class="flex" style="justify-content: space-between;">
+                                <span>Relatable</span>
+                                <span style="color: var(--secondary-violet);">92%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Metrics -->
+                    <div class="card col-span-3">
+                        <div class="card-header">
+                            <i class="fa-solid fa-bolt"></i> Engagement
+                        </div>
+                        <div class="metric-big">8.5/10</div>
+                        <div class="metric-label">Top 15% of your niche</div>
+                    </div>
+
+                    <div class="card col-span-3">
+                        <div class="card-header">
+                            <i class="fa-solid fa-fire"></i> Virality
+                        </div>
+                        <div class="metric-big" style="color: var(--primary-neon);">High <span
+                                class="virality-badge">Trending</span></div>
+                        <div class="metric-label">Velocity increasing</div>
+                    </div>
+
+                    <div class="card col-span-6">
+                        <div class="card-header">
+                            <i class="fa-solid fa-bullseye"></i> Audience & Age Insights
+                        </div>
+                        <div>
+                            <div
+                                style="display:flex; justify-content:space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                                <span>Primary Target</span>
+                                <strong>18-34 Years</strong>
+                            </div>
+                            <div class="demo-bar-container">
+                                <div class="demo-segment seg-youth" id="bar-youth" style="width: 0%"></div>
+                                <div class="demo-segment seg-adult" id="bar-adult" style="width: 0%"></div>
+                                <div class="demo-segment seg-senior" id="bar-senior" style="width: 0%"></div>
+                            </div>
+                            <div class="demo-legend">
+                                <span style="color: var(--primary-neon);">● Youth (65%)</span>
+                                <span style="color: var(--secondary-violet);">● Adult (30%)</span>
+                                <span style="color: #666;">● Senior (5%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Hashtags & Improvements -->
+                    <div class="card col-span-4">
+                        <div class="card-header">
+                            <i class="fa-solid fa-hashtag"></i> Hashtag Strategy
+                        </div>
+                        <div class="tags-container">
+                            <div class="tag hot">#ProductivityHacks</div>
+                            <div class="tag hot">#WorkSmart</div>
+                            <div class="tag">#MondayMotivation</div>
+                            <div class="tag">#TechLife</div>
+                            <div class="tag">#RemoteWork</div>
+                        </div>
+                        <p style="font-size: 0.8rem; color: #888; margin-top: 1rem;">
+                            <i class="fa-solid fa-arrow-trend-up"></i> <strong>#ProductivityHacks</strong> is currently
+                            trending +200% this week.
+                        </p>
+                    </div>
+
+                    <div class="card col-span-8">
+                        <div class="card-header">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggested Improvements
+                        </div>
+                        <ul class="improvement-list">
+                            <li>
+                                <i class="fa-solid fa-check-circle"></i>
+                                <div>
+                                    <strong>Hook needs more punch.</strong><br>
+                                    <span style="color: #bbb;">Try starting with "Stop working 10 hours a day..."
+                                        instead of "Do you work long hours?" to trigger immediate curiosity.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-video"></i>
+                                <div>
+                                    <strong>Visual pacing is too slow.</strong><br>
+                                    <span style="color: #bbb;">The first 3 seconds of the video are static. Add a quick
+                                        zoom or text overlay transition to retain retention.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Row 4: Final Verdict -->
+                    <div class="card verdict-card verdict-glow col-span-12">
+                        <div class="verdict-title">
+                            <i class="fa-solid fa-robot"></i> FINAL VERDICT
+                        </div>
+                        <div class="verdict-text">
+                            "This post has <strong>massive potential</strong> for LinkedIn. The core message is solid,
+                            but the execution feels slightly generic. By sharpening the hook and increasing visual
+                            dynamism in the first 3 seconds, you could easily see a <strong>2-3x lift in
+                                engagement</strong>. It fits the 'Hustle Culture' trend perfectly but needs more
+                            authentic storytelling."
+                        </div>
+                        <button class="analyze-btn"
+                            style="position: relative; right: auto; top: auto; bottom: auto; background: rgba(255,255,255,0.1); border: 1px solid white;">
+                            Generate Copy Variants <i class="fa-solid fa-pen-nib"></i>
+                        </button>
+                        <a href="index.html"
+                            style="margin-left: 20px; color: var(--text-muted); text-decoration:none; font-size: 0.9rem;">Start
+                            Over</a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
