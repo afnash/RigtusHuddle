@@ -1,0 +1,16 @@
+You MUST respond ONLY with the final structured JSON in this exact format:
+
+{
+  "total_comments": number,
+  "estimated_18_30_comments": number,
+  "acceptance_score_18_30": "high | medium | low",
+  "positive_percent": "...%",
+  "negative_percent": "...%",
+  "neutral_percent": "...%",
+  "common_positive_points": [...],
+  "common_negative_points": [...],
+  "summary": "..."
+}
+
+Do NOT include explanations, reasoning, python code, or commentary outside the JSON.
+Return ONLY pure JSON.

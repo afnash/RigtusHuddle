@@ -1,0 +1,28 @@
+STEP 1: Starting script...
+STEP 2: Client created successfully.
+STEP 3: Loaded prompt.
+STEP 4: Chat session created.
+STEP 5: Sending message to agent...
+STEP 6: Response received.
+```json
+{
+  "total_comments": 29,
+  "estimated_18_30_comments": 5,
+  "acceptance_score_18_30": "high",
+  "positive_percent": "58.62%",
+  "negative_percent": "20.69%",
+  "neutral_percent": "20.69%",
+  "common_positive_points": [
+    "New features like Notebook and Agents",
+    "Improved productivity and workflow efficiency",
+    "Transformative impact of AI",
+    "Overall positive and exciting developments"
+  ],
+  "common_negative_points": [
+    "Alleged complicity in the Gaza conflict/genocide",
+    "Providing technology (Azure/AI) that enables perceived war crimes",
+    "Calls to end support for 'Israeli apartheid'"
+  ],
+  "summary": "The LinkedIn comments reveal a polarized sentiment. A majority of the comments (58.62%) express strong positive feedback, highlighting excitement and appreciation for new features like Notebook and AI-driven agents, praising their potential for productivity and efficiency. The estimated 18-30 age group shows high acceptance, with all their identified comments being positive. However, a notable portion of comments (20.69%) are severely negative, criticizing Microsoft's alleged involvement in the Gaza conflict/genocide through its technology, specifically Azure and AI services. The remaining comments (20.69%) are neutral, often consisting of advertisements or brief, unopinionated statements."
+}
+```

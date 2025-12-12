@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LinkedIn Comments Age Classifier Agent
+Linken Comments Age Classifier Agent
 Uses Google Gemini API to analyze comments and classify likely age group (18-30)
 """
 
