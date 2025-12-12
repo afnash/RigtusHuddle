@@ -1,232 +1,405 @@
 {
-  "analysis_timestamp": "2025-12-12T23:08:21.402656",
-  "total_comments": 10,
-  "young_adult_comments_count": 4,
-  "percentage": 40.0,
+  "analysis_timestamp": "2025-12-12T23:45:58.302787",
+  "total_comments": 24,
+  "young_adult_comments_count": 8,
+  "percentage": 33.33333333333333,
   "young_adult_comments": [
     {
-      "comment_id": "c001",
-      "author": "Alex Johnson",
-      "text": "Yooo this is fire! 🔥 Can't wait to try it out. Congrats fam!",
-      "confidence_score": 0.98,
+      "comment_id": "p1_c3",
+      "text": "Mamaearth is a great example of how purpose only matters when it shows up in action. ‘Goodness Inside’ truly coming alive on the streets",
+      "confidence_score": 0.65,
       "keywords_identified": [
-        "fire",
-        "yooo",
-        "fam (informal term of endearment, common among younger generations)",
-        "Yooo (informal greeting)",
-        "🔥",
-        "this is fire! (modern slang for excellent/amazing)",
-        "overall casual and enthusiastic language style",
-        "🔥 emoji (reinforces slang, common in youth digital communication)",
-        "fam"
+        "Strong emphasis on 'purpose in action' and brand authenticity, a core value for younger generations evaluating companies.",
+        "Engagement with brand strategy and social impact, popular areas of interest for young professionals and early career individuals.",
+        "Concise and direct communication without excessive corporate jargon, common among digitally native generations.",
+        "Descriptive and slightly informal phrasing ('truly coming alive on the streets') to convey real-world impact, suggesting a fresh and less rigidly corporate communication style."
       ],
-      "reasoning": "The comment exhibits several strong indicators of communication patterns common among young adults (18-30). It uses highly informal slang ('Yooo', 'fire', 'fam'), an emoji (🔥) to emphasize meaning, and an overall very casual and enthusiastic tone. These linguistic choices are characteristic of Gen Z and young millennials and are less frequently adopted by older demographics, especially in a public-facing professional context like LinkedIn."
+      "reasoning": "The comment exhibits a strong appreciation for a brand's purpose manifesting in tangible, real-world action, a value often highly prioritized and articulated by younger generations (Gen Z, young millennials) in their evaluation of brands. The phrasing 'truly coming alive on the streets' is descriptive and slightly informal yet insightful, suggesting a fresh perspective on brand impact that aligns with how young professionals often observe and articulate authenticity, rather than using overly traditional corporate jargon. While professional in tone and lacking overt slang or emojis (which is common on LinkedIn regardless of age), the specific emphasis on visible, street-level impact and the slightly less formal descriptor for a business context lean towards a younger voice."
     },
     {
-      "comment_id": "c003",
-      "author": "Mike Chen",
-      "text": "Dude this looks sick! Just graduated and looking for opportunities like this. Let's connect!",
-      "confidence_score": 0.98,
+      "comment_id": "p1_c4",
+      "text": "This is an amazing initiative Syed Sibtain Imam. What a way to celebrate a birthday, where Mamaearth trying to contribute to Mother Earth. Really inspiring!!",
+      "confidence_score": 0.75,
       "keywords_identified": [
-        "dude",
-        "sick (slang for impressive/cool)",
-        "looking for opportunities like this (early career job search)",
-        "Dude (casual address)",
-        "Just graduated (career stage)",
-        "graduated",
-        "sick"
+        "use of double exclamation marks (!!)",
+        "enthusiastic tone (amazing, inspiring)",
+        "strong positive emotional expression",
+        "appreciation for environmental initiative (contribute to Mother Earth)"
       ],
-      "reasoning": "The comment uses highly informal language and contemporary slang ('Dude', 'sick') which is prevalent among younger demographics. The strongest indicator is 'Just graduated', which places the individual in the early career stage, typically aligning with the 18-30 age bracket (e.g., recent college graduates). The overall tone is enthusiastic and direct, characteristic of young professionals navigating their initial career steps."
+      "reasoning": "The comment exhibits an enthusiastic and slightly informal communication style, characteristic of younger adults on professional platforms. The use of double exclamation marks ('!!') for emphasis is a strong indicator of this demographic's online communication patterns, as is the passionate appreciation for a corporate social responsibility initiative focused on environmental contribution."
     },
     {
-      "comment_id": "c005",
-      "author": "Tyler Brown",
-      "text": "lit af bro 💯 gonna share this with my squad. btw we should collab on some projects",
-      "confidence_score": 0.98,
+      "comment_id": "p2_c1",
+      "text": "Great Features, Especially Notebook feature. It can really help teams to organize their tasks, notes etc.",
+      "confidence_score": 0.65,
       "keywords_identified": [
-        "collab",
-        "lit af",
-        "af",
-        "squad",
-        "bro",
-        "my squad",
-        "btw",
-        "gonna",
-        "💯",
-        "lit"
+        "Overall brevity and directness",
+        "Use of abbreviation 'etc.' in a professional comment",
+        "Casual capitalization ('Notebook feature' vs. 'Notebook Feature')",
+        "Slightly informal phrasing ('Especially Notebook feature' instead of 'Especially the Notebook feature')"
       ],
-      "reasoning": "The comment is saturated with slang, internet abbreviations, and emojis commonly used by young adults (Gen Z and young millennials). The casual tone and direct invitation to 'collab on some projects' also suggest someone in an early career stage or student phase looking to network informally."
+      "reasoning": "The comment exhibits a slightly informal language style, particularly with the direct phrasing 'Especially Notebook feature' (omitting 'the') and the use of the abbreviation 'etc.' These minor grammatical and stylistic choices, along with the overall brevity and practical focus, suggest a communication pattern often observed in younger adults (18-30) who may adopt a less rigid professional tone on platforms like LinkedIn compared to more seasoned professionals. While lacking overt slang or emojis, the slight informalities lean towards a younger demographic."
     },
     {
-      "comment_id": "c006",
-      "author": "Emma Davis",
-      "text": "This is amazing! I'm in college studying CS and this is exactly what I've been looking for. Would love to learn more!",
-      "confidence_score": 0.95,
+      "comment_id": "p2_c3",
+      "text": "Congrats Satya! 🎉\n\nAvailable now - The bundle to own for the race to AI Supremacy!\n\nI quote a famous domain investor - Dot com doesn't make a quality name. Its always been about the keyword / SLD.\n\nAIPC.COMPUTER \nAICHIP.COMPUTER \nHARDWARE.COMPUTER \nSOFTWARE.COMPUTER \n\nget@smartdomain.name",
+      "confidence_score": 0.75,
       "keywords_identified": [
-        "Enthusiastic tone ('amazing!', '!')",
-        "studying",
-        "college",
-        "Explicit mention of 'in college'",
-        "Expressed desire to 'learn more' relevant to their studies/career path.",
-        "rn",
-        "Studying 'CS' (Computer Science), a common abbreviation used by students and professionals in the field."
+        "fam",
+        "Niche digital commerce knowledge (domain investing, SLD, TLDs like .COMPUTER)",
+        "lit",
+        "Casual language ('Congrats')",
+        "Integration of an informal greeting with immediate commercial intent",
+        "🎉",
+        "Direct entrepreneurial sales pitch for digital assets (domain names)",
+        "Leveraging current tech buzzwords ('AI Supremacy') for commercial purposes",
+        "Use of emoji ('🎉')"
       ],
-      "reasoning": "The commenter explicitly states they are 'in college studying CS', which directly places them within the typical 18-22 age range, making it highly probable they are within the 18-30 young adult demographic. The enthusiastic yet professional language and clear interest in a career-relevant topic also align with this age group."
+      "reasoning": "The comment exhibits a blend of informal language, immediate commercial intent, and specific digital economy knowledge, which is characteristic of many young adults (Gen Z/young millennials) engaged in online entrepreneurship or leveraging digital trends. The casual 'Congrats' and emoji, combined with an abrupt pivot to a sales pitch for digital assets related to a current buzzword ('AI Supremacy'), aligns with communication patterns of digitally native individuals seeking to capitalize on new markets."
+    },
+    {
+      "comment_id": "p2_c6",
+      "text": "🏆 Premium .computer Domain Portfolio\n\nDell Technologies already secured Dell.computer - Don't fall behind! ⏳\n\n🤖 AI & Future Tech\n🚀 AIPC.computer | AIPCs.computer\n🧠 AIchip.computer | AIchips.computer\n🕶️ ARPC.computer (Augmented Reality PC)\n💻 ARlaptop.computer (AR mobile computing)\n🔗 DeAI.computer (Decentralized AI)\n⚛️ QuantumComputer.computer\n\n💻 Hardware & Devices\n🖥️ Desktop.computer | 💻 Laptops.computer\n📱 TabletPC.computer | 🛡️ RuggedPC.computer\n✨ Ultrabook.computer | Ultrabooks.computer\n🔧 Workstation.computer | Workstations.computer\n\n🎮 Gaming & Performance\n🎮 GamingPC.computer | GamingPCs.computer\n🎯 PCgaming.computer | 🔮 MiniPCS.computer\n🏆 PCS.computer \n\n⚡ Silicon & Components\n🔌 CHIP.computer | CHIPS.computer\n💎 Microchip.computer \n🚀 Superchip.computer\n⚙️ Processor.computer \n🧩 Semiconductor.computer | Semiconductors.computer\n\n🏢 Enterprise & Software\n🗃️ Databases.computer \n🌐 Datacenter.computer\n🔩 Hardware.computer \n💾 Software.computer\n🚀 Supercomputer.computer\n\n💰 Bundle Opportunity\n✨ Full portfolio discount available\n🔄 Lease-to-own options for strategic buyers\n\n⏳ Urgent Notice\n📈 Pricing adjusts June 30 (+15%)\n⚠️ Competitors (Acer/ Lenovo/ ASUS/ MSI / Samsung Electronics ) in active talks",
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "Focus on cutting-edge technology domains (AI, Quantum, AR, DeAI) presented in an engaging manner.",
+        "Heavy and varied emoji usage integrated throughout the entire comment (e.g., 🏆⏳🤖🚀🧠🕶️💻🔗⚛️🖥️📱🛡️✨🔧🎮🎯🔮⚡🔌💎⚙️🧩🏢🗃️🌐🔩💾💰🔄📈⚠️).",
+        "lit",
+        "🚀",
+        "✨",
+        "Direct and urgent call to action with a strong sense of FOMO (Fear Of Missing Out): 'Don't fall behind!' and 'Urgent Notice'.",
+        "sus",
+        "Structured, easy-to-digest format with bullet points and clear categories, designed for quick scanning typical of digital native communication."
+      ],
+      "reasoning": "The extensive and integrated use of a wide variety of emojis throughout a structured, professional sales pitch is a strong indicator. While the content includes professional business vocabulary (e.g., 'strategic buyers,' 'lease-to-own'), the communication style, with its heavy reliance on visual cues and an urgent, direct tone, aligns more closely with contemporary digital communication patterns prevalent among younger adults (Gen Z/young millennials) who grew up with emojis as a fundamental part of online interaction, even in professional contexts. The blend of serious business content with a highly visual and engaging presentation suggests a younger professional adapting modern communication strategies."
+    },
+    {
+      "comment_id": "p2_c14",
+      "text": "Прекрасная услу @га",
+      "confidence_score": 0.85,
+      "keywords_identified": [
+        "internet-native text modification/stylization",
+        "deliberate mid-word character insertion ('@')",
+        "casual online communication pattern on a professional platform",
+        "deviation from standard grammar/spelling for stylistic effect"
+      ],
+      "reasoning": "The deliberate insertion of the '@' symbol mid-word ('услу@га') is a strong indicator of an internet-native text modification. This stylistic choice, breaking traditional grammar and spelling for visual effect or subtle emphasis, is highly characteristic of younger demographics (Gen Z/young millennials) who are accustomed to playful and non-standard online communication patterns. While the phrase itself is neutral, the modification points towards someone comfortable with and employing modern internet text aesthetics, which is more prevalent in the 18-30 age group."
+    },
+    {
+      "comment_id": "p2_c16",
+      "text": "Congrats 🎉 Finally something truly usable also on SMB environments!",
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "Concise and enthusiastic communication style",
+        "🎉",
+        "Inclusion of '🎉' (party popper) emoji in a professional context",
+        "Implied focus on practical usability in business environments, common for early career professionals or those engaging with new solutions.",
+        "Use of informal abbreviation 'Congrats'"
+      ],
+      "reasoning": "The combination of the informal abbreviation 'Congrats' and the celebratory '🎉' emoji strongly indicates a younger demographic (Gen Z/young millennial) who frequently blend casual communication elements with professional contexts on platforms like LinkedIn. While the mention of 'SMB environments' shows some business acumen, the overall style leans towards younger communication patterns."
+    },
+    {
+      "comment_id": "p2_c17",
+      "text": "Exciting, so looking foward to these.",
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "Use of standalone adjective as interjection ('Exciting')",
+        "Informal tone",
+        "Use of 'so' as an intensifier in a casual context",
+        "Brevity",
+        "Minor spelling error ('foward')"
+      ],
+      "reasoning": "The comment displays an informal and concise communication style, characteristic of younger adults online. It uses a standalone adjective ('Exciting') as an interjection, an intensifier ('so') common in enthusiastic casual speech, and a minor spelling error ('foward'), all of which suggest a quick, less formal digital interaction often seen among younger demographics."
     }
   ],
   "all_analyses": [
     {
-      "comment_id": "c001",
-      "author": "Alex Johnson",
-      "text": "Yooo this is fire! 🔥 Can't wait to try it out. Congrats fam!",
-      "is_young_adult": true,
-      "confidence_score": 0.98,
-      "keywords_identified": [
-        "fire",
-        "yooo",
-        "fam (informal term of endearment, common among younger generations)",
-        "Yooo (informal greeting)",
-        "🔥",
-        "this is fire! (modern slang for excellent/amazing)",
-        "overall casual and enthusiastic language style",
-        "🔥 emoji (reinforces slang, common in youth digital communication)",
-        "fam"
-      ],
-      "reasoning": "The comment exhibits several strong indicators of communication patterns common among young adults (18-30). It uses highly informal slang ('Yooo', 'fire', 'fam'), an emoji (🔥) to emphasize meaning, and an overall very casual and enthusiastic tone. These linguistic choices are characteristic of Gen Z and young millennials and are less frequently adopted by older demographics, especially in a public-facing professional context like LinkedIn."
-    },
-    {
-      "comment_id": "c002",
-      "author": "Sarah Mitchell",
-      "text": "As someone with 25 years of experience in the industry, I believe this is a solid foundation. Best wishes for your venture.",
+      "comment_id": "p1_c1",
+      "text": "It's great that someone who could actually make a change is looking into these problems and indeed coming up with solutions too.",
       "is_young_adult": false,
-      "confidence_score": 1.0,
+      "confidence_score": 0.75,
       "keywords_identified": [
-        "Professional vocabulary ('solid foundation', 'venture')",
-        "25 years of experience in the industry",
-        "Formal language style",
-        "Absence of emojis or internet slang"
+        "Absence of internet slang or youth-specific colloquialisms",
+        "Standard vocabulary and expressions without age-specific trends",
+        "Absence of emojis",
+        "Neutral and professional language style"
       ],
-      "reasoning": "The comment explicitly states '25 years of experience in the industry.' Assuming a person starts their career around 18-25 years old, 25 years of experience would place their current age at 43-50 years old at a minimum, well outside the 18-30 age bracket. The language style is also formal and professional, completely lacking any slang, emojis, or casual expressions typically associated with younger demographics on social platforms like LinkedIn."
+      "reasoning": "The comment uses professional and neutral language with no slang, emojis, or internet jargon. While anyone could write such a comment, the complete absence of common communication patterns often seen from young adults (e.g., emojis, more informal phrasing, internet slang) makes it less distinctively or 'likely' from the 18-30 age group compared to a broader professional demographic."
     },
     {
-      "comment_id": "c003",
-      "author": "Mike Chen",
-      "text": "Dude this looks sick! Just graduated and looking for opportunities like this. Let's connect!",
-      "is_young_adult": true,
-      "confidence_score": 0.98,
-      "keywords_identified": [
-        "dude",
-        "sick (slang for impressive/cool)",
-        "looking for opportunities like this (early career job search)",
-        "Dude (casual address)",
-        "Just graduated (career stage)",
-        "graduated",
-        "sick"
-      ],
-      "reasoning": "The comment uses highly informal language and contemporary slang ('Dude', 'sick') which is prevalent among younger demographics. The strongest indicator is 'Just graduated', which places the individual in the early career stage, typically aligning with the 18-30 age bracket (e.g., recent college graduates). The overall tone is enthusiastic and direct, characteristic of young professionals navigating their initial career steps."
-    },
-    {
-      "comment_id": "c004",
-      "author": "Jennifer Williams",
-      "text": "Congratulations! Having worked in senior management for two decades, I appreciate innovative solutions. Keep up the excellent work.",
+      "comment_id": "p1_c2",
+      "text": "Congrats for Superb photos and post by expert social media manager. I was happy many employers not only from beauty and personal care business like Mamaearth but other fields got new format compliance products - registers, abstracts, new labour codes book, employee cards, GST invoice book etc from our store Bapuji Stationery Mart Parel Mumbai (trusted since 1948) and thus avoided discrepancy from non-compliance especially for December 2025 and January 2026 as shown in my profile",
       "is_young_adult": false,
-      "confidence_score": 1.0,
-      "keywords_identified": [
-        "absence of emojis or internet slang",
-        "professional vocabulary and expressions ('innovative solutions', 'excellent work')",
-        "app",
-        "formal and professional language style",
-        "reference to 'senior management'",
-        "explicit mention of 'two decades' of experience"
-      ],
-      "reasoning": "The commenter explicitly states having 'worked in senior management for two decades,' which is impossible for someone in the 18-30 age group. An individual in this age bracket would not have accumulated 20 years of professional experience, let alone in senior management. The language is also highly formal and professional, lacking the casualness, slang, or emojis often associated with young adults."
-    },
-    {
-      "comment_id": "c005",
-      "author": "Tyler Brown",
-      "text": "lit af bro 💯 gonna share this with my squad. btw we should collab on some projects",
-      "is_young_adult": true,
-      "confidence_score": 0.98,
-      "keywords_identified": [
-        "collab",
-        "lit af",
-        "af",
-        "squad",
-        "bro",
-        "my squad",
-        "btw",
-        "gonna",
-        "💯",
-        "lit"
-      ],
-      "reasoning": "The comment is saturated with slang, internet abbreviations, and emojis commonly used by young adults (Gen Z and young millennials). The casual tone and direct invitation to 'collab on some projects' also suggest someone in an early career stage or student phase looking to network informally."
-    },
-    {
-      "comment_id": "c006",
-      "author": "Emma Davis",
-      "text": "This is amazing! I'm in college studying CS and this is exactly what I've been looking for. Would love to learn more!",
-      "is_young_adult": true,
       "confidence_score": 0.95,
       "keywords_identified": [
-        "Enthusiastic tone ('amazing!', '!')",
-        "studying",
-        "college",
-        "Explicit mention of 'in college'",
-        "Expressed desire to 'learn more' relevant to their studies/career path.",
-        "rn",
-        "Studying 'CS' (Computer Science), a common abbreviation used by students and professionals in the field."
+        "app",
+        "Focus on avoiding 'discrepancy from non-compliance' for specific future dates, indicating a deep understanding of business operations and legal requirements.",
+        "Formal, detailed business communication style and direct self-promotion.",
+        "fr",
+        "Absence of emojis or internet slang.",
+        "Detailed knowledge of business compliance products (labour codes, GST invoice book, registers, abstracts).",
+        "Promotion of an established family business ('trusted since 1948').",
+        "Reference to 'many employers' and diverse business fields suggests broad professional experience."
       ],
-      "reasoning": "The commenter explicitly states they are 'in college studying CS', which directly places them within the typical 18-22 age range, making it highly probable they are within the 18-30 young adult demographic. The enthusiastic yet professional language and clear interest in a career-relevant topic also align with this age group."
+      "reasoning": "The comment displays a strong business-oriented communication style, deep knowledge of specific compliance regulations and products (GST, labour codes, registers, abstracts), and promotes a long-standing family business ('trusted since 1948'). It completely lacks typical young adult communication markers such as emojis, internet slang, or a casual tone. The content reflects an established professional with significant business experience, not someone in the 18-30 age range who would typically be a student, recent graduate, or in early career stages."
     },
     {
-      "comment_id": "c007",
-      "author": "Robert Anderson",
-      "text": "Impressive work. In my 30+ years as an executive, I've seen many startups. This has potential. Let's schedule a meeting to discuss investment opportunities.",
+      "comment_id": "p1_c3",
+      "text": "Mamaearth is a great example of how purpose only matters when it shows up in action. ‘Goodness Inside’ truly coming alive on the streets",
+      "is_young_adult": true,
+      "confidence_score": 0.65,
+      "keywords_identified": [
+        "Strong emphasis on 'purpose in action' and brand authenticity, a core value for younger generations evaluating companies.",
+        "Engagement with brand strategy and social impact, popular areas of interest for young professionals and early career individuals.",
+        "Concise and direct communication without excessive corporate jargon, common among digitally native generations.",
+        "Descriptive and slightly informal phrasing ('truly coming alive on the streets') to convey real-world impact, suggesting a fresh and less rigidly corporate communication style."
+      ],
+      "reasoning": "The comment exhibits a strong appreciation for a brand's purpose manifesting in tangible, real-world action, a value often highly prioritized and articulated by younger generations (Gen Z, young millennials) in their evaluation of brands. The phrasing 'truly coming alive on the streets' is descriptive and slightly informal yet insightful, suggesting a fresh perspective on brand impact that aligns with how young professionals often observe and articulate authenticity, rather than using overly traditional corporate jargon. While professional in tone and lacking overt slang or emojis (which is common on LinkedIn regardless of age), the specific emphasis on visible, street-level impact and the slightly less formal descriptor for a business context lean towards a younger voice."
+    },
+    {
+      "comment_id": "p1_c4",
+      "text": "This is an amazing initiative Syed Sibtain Imam. What a way to celebrate a birthday, where Mamaearth trying to contribute to Mother Earth. Really inspiring!!",
+      "is_young_adult": true,
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "use of double exclamation marks (!!)",
+        "enthusiastic tone (amazing, inspiring)",
+        "strong positive emotional expression",
+        "appreciation for environmental initiative (contribute to Mother Earth)"
+      ],
+      "reasoning": "The comment exhibits an enthusiastic and slightly informal communication style, characteristic of younger adults on professional platforms. The use of double exclamation marks ('!!') for emphasis is a strong indicator of this demographic's online communication patterns, as is the passionate appreciation for a corporate social responsibility initiative focused on environmental contribution."
+    },
+    {
+      "comment_id": "p1_c5",
+      "text": "Merci",
+      "is_young_adult": false,
+      "confidence_score": 0.9,
+      "keywords_identified": [],
+      "reasoning": "The comment 'Merci' is an extremely neutral, polite, and universally understood expression meaning 'Thank you'. It lacks any specific language style (slang, informal abbreviations), emojis, internet slang, or references to life stages typically associated with the 18-30 age group's communication patterns on social platforms. Its brevity and formal politeness offer no discernible clues to attribute it to any specific age demographic, making it impossible to determine if it's 'likely' from a young adult based solely on this comment."
+    },
+    {
+      "comment_id": "p2_c1",
+      "text": "Great Features, Especially Notebook feature. It can really help teams to organize their tasks, notes etc.",
+      "is_young_adult": true,
+      "confidence_score": 0.65,
+      "keywords_identified": [
+        "Overall brevity and directness",
+        "Use of abbreviation 'etc.' in a professional comment",
+        "Casual capitalization ('Notebook feature' vs. 'Notebook Feature')",
+        "Slightly informal phrasing ('Especially Notebook feature' instead of 'Especially the Notebook feature')"
+      ],
+      "reasoning": "The comment exhibits a slightly informal language style, particularly with the direct phrasing 'Especially Notebook feature' (omitting 'the') and the use of the abbreviation 'etc.' These minor grammatical and stylistic choices, along with the overall brevity and practical focus, suggest a communication pattern often observed in younger adults (18-30) who may adopt a less rigid professional tone on platforms like LinkedIn compared to more seasoned professionals. While lacking overt slang or emojis, the slight informalities lean towards a younger demographic."
+    },
+    {
+      "comment_id": "p2_c2",
+      "text": "Save #visualbasic #vb",
+      "is_young_adult": false,
+      "confidence_score": 0.7,
+      "keywords_identified": [
+        "Reference to Visual Basic and its associated sentiment ('Save')",
+        "Lack of typical young adult communication patterns (e.g., emojis, modern internet slang)"
+      ],
+      "reasoning": "The plea to 'Save #visualbasic #vb' suggests a historical connection to the language's past prominence or a concern about its decline. Visual Basic (especially classic VB6) reached its peak popularity before most 18-30 year olds (born 1994-2006) would have entered the professional development world or even begun extensive programming. While younger developers might encounter VB.NET or legacy VB systems, the sentiment of 'saving' it is more commonly associated with those who experienced its widespread use and have a stronger historical or nostalgic attachment, typically older generations of developers. The comment also lacks common young adult communication markers like emojis or overt internet slang, which are often present in similar terse online posts from that demographic."
+    },
+    {
+      "comment_id": "p2_c3",
+      "text": "Congrats Satya! 🎉\n\nAvailable now - The bundle to own for the race to AI Supremacy!\n\nI quote a famous domain investor - Dot com doesn't make a quality name. Its always been about the keyword / SLD.\n\nAIPC.COMPUTER \nAICHIP.COMPUTER \nHARDWARE.COMPUTER \nSOFTWARE.COMPUTER \n\nget@smartdomain.name",
+      "is_young_adult": true,
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "fam",
+        "Niche digital commerce knowledge (domain investing, SLD, TLDs like .COMPUTER)",
+        "lit",
+        "Casual language ('Congrats')",
+        "Integration of an informal greeting with immediate commercial intent",
+        "🎉",
+        "Direct entrepreneurial sales pitch for digital assets (domain names)",
+        "Leveraging current tech buzzwords ('AI Supremacy') for commercial purposes",
+        "Use of emoji ('🎉')"
+      ],
+      "reasoning": "The comment exhibits a blend of informal language, immediate commercial intent, and specific digital economy knowledge, which is characteristic of many young adults (Gen Z/young millennials) engaged in online entrepreneurship or leveraging digital trends. The casual 'Congrats' and emoji, combined with an abrupt pivot to a sales pitch for digital assets related to a current buzzword ('AI Supremacy'), aligns with communication patterns of digitally native individuals seeking to capitalize on new markets."
+    },
+    {
+      "comment_id": "p2_c4",
+      "text": "\"This is a major leap in transforming AI from a tool into a true collaborator. The modularity with Agents and the contextual grounding via Notebooks feels like we're moving toward personal AI OS-level functionality — not just productivity tools. Especially intrigued by the ability to generate audio overviews from heterogeneous data. That’s accessibility and efficiency combined. Excited to see how this shapes knowledge workflows and enterprise decision-making!\"",
+      "is_young_adult": false,
+      "confidence_score": 0.9,
+      "keywords_identified": [
+        "Formal language style (no slang or abbreviations)",
+        "lit",
+        "Absence of emojis or internet slang",
+        "Focus on high-level strategic business implications rather than early career concerns",
+        "fr",
+        "Sophisticated technical and business vocabulary ('modularity with Agents', 'contextual grounding via Notebooks', 'AI OS-level functionality', 'heterogeneous data', 'knowledge workflows', 'enterprise decision-making')",
+        "collab"
+      ],
+      "reasoning": "The comment displays a highly professional, technical, and analytical tone, focusing on advanced concepts like 'AI OS-level functionality,' 'heterogeneous data,' 'knowledge workflows,' and 'enterprise decision-making.' The vocabulary is sophisticated and domain-specific, suggesting an established professional with deep industry knowledge. Crucially, there is a complete absence of informal language, slang, abbreviations, or emojis, which are common communication patterns among the 18-30 age group online. The discussion points to an understanding of business implications at a strategic level, rather than entry-level or student perspectives."
+    },
+    {
+      "comment_id": "p2_c5",
+      "text": "Поздравляю, Satya! 🎉",
+      "is_young_adult": false,
+      "confidence_score": 0.4,
+      "keywords_identified": [
+        "🎉",
+        "use of emoji (🎉)"
+      ],
+      "reasoning": "The comment is extremely brief, consisting of a standard congratulatory phrase in Russian ('Поздравляю') and a universally recognized celebration emoji ('🎉'). While emoji use is generally more prevalent among younger demographics (including 18-30), this specific emoji for congratulations is widely adopted across many age groups, including older millennials and Gen X, especially in professional social media contexts like LinkedIn. There are no other linguistic, slang, or content-related indicators (like career stage or specific cultural references) that point strongly to the 18-30 age group. The comment is too generic to confidently attribute it as 'likely' coming from this specific age range."
+    },
+    {
+      "comment_id": "p2_c6",
+      "text": "🏆 Premium .computer Domain Portfolio\n\nDell Technologies already secured Dell.computer - Don't fall behind! ⏳\n\n🤖 AI & Future Tech\n🚀 AIPC.computer | AIPCs.computer\n🧠 AIchip.computer | AIchips.computer\n🕶️ ARPC.computer (Augmented Reality PC)\n💻 ARlaptop.computer (AR mobile computing)\n🔗 DeAI.computer (Decentralized AI)\n⚛️ QuantumComputer.computer\n\n💻 Hardware & Devices\n🖥️ Desktop.computer | 💻 Laptops.computer\n📱 TabletPC.computer | 🛡️ RuggedPC.computer\n✨ Ultrabook.computer | Ultrabooks.computer\n🔧 Workstation.computer | Workstations.computer\n\n🎮 Gaming & Performance\n🎮 GamingPC.computer | GamingPCs.computer\n🎯 PCgaming.computer | 🔮 MiniPCS.computer\n🏆 PCS.computer \n\n⚡ Silicon & Components\n🔌 CHIP.computer | CHIPS.computer\n💎 Microchip.computer \n🚀 Superchip.computer\n⚙️ Processor.computer \n🧩 Semiconductor.computer | Semiconductors.computer\n\n🏢 Enterprise & Software\n🗃️ Databases.computer \n🌐 Datacenter.computer\n🔩 Hardware.computer \n💾 Software.computer\n🚀 Supercomputer.computer\n\n💰 Bundle Opportunity\n✨ Full portfolio discount available\n🔄 Lease-to-own options for strategic buyers\n\n⏳ Urgent Notice\n📈 Pricing adjusts June 30 (+15%)\n⚠️ Competitors (Acer/ Lenovo/ ASUS/ MSI / Samsung Electronics ) in active talks",
+      "is_young_adult": true,
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "Focus on cutting-edge technology domains (AI, Quantum, AR, DeAI) presented in an engaging manner.",
+        "Heavy and varied emoji usage integrated throughout the entire comment (e.g., 🏆⏳🤖🚀🧠🕶️💻🔗⚛️🖥️📱🛡️✨🔧🎮🎯🔮⚡🔌💎⚙️🧩🏢🗃️🌐🔩💾💰🔄📈⚠️).",
+        "lit",
+        "🚀",
+        "✨",
+        "Direct and urgent call to action with a strong sense of FOMO (Fear Of Missing Out): 'Don't fall behind!' and 'Urgent Notice'.",
+        "sus",
+        "Structured, easy-to-digest format with bullet points and clear categories, designed for quick scanning typical of digital native communication."
+      ],
+      "reasoning": "The extensive and integrated use of a wide variety of emojis throughout a structured, professional sales pitch is a strong indicator. While the content includes professional business vocabulary (e.g., 'strategic buyers,' 'lease-to-own'), the communication style, with its heavy reliance on visual cues and an urgent, direct tone, aligns more closely with contemporary digital communication patterns prevalent among younger adults (Gen Z/young millennials) who grew up with emojis as a fundamental part of online interaction, even in professional contexts. The blend of serious business content with a highly visual and engaging presentation suggests a younger professional adapting modern communication strategies."
+    },
+    {
+      "comment_id": "p2_c7",
+      "text": "Exciting",
+      "is_young_adult": false,
+      "confidence_score": 0.1,
+      "keywords_identified": [],
+      "reasoning": "The comment 'Exciting' is a single, generic positive adjective. It contains no slang, emojis, specific vocabulary, or contextual cues (like references to career stage, education, or internet culture) that would allow for a strong inference about the commenter's age group. While young adults might use concise comments, this particular comment is too universal and lacking in distinguishing features to be attributed specifically to the 18-30 age group."
+    },
+    {
+      "comment_id": "p2_c8",
+      "text": "This is great",
+      "is_young_adult": false,
+      "confidence_score": 0.7,
+      "keywords_identified": [
+        "Neutral, universally understood vocabulary ('great')",
+        "Lack of internet slang or acronyms",
+        "No specific references to career stage (student, recent graduate, early career)",
+        "Absence of overly enthusiastic or casual language often seen in younger online communication",
+        "Lack of emojis"
+      ],
+      "reasoning": "The comment \"This is great\" is extremely generic and lacks any specific linguistic cues, slang, emojis, or communication patterns typically associated with the 18-30 age group. Its complete neutrality makes it attributable to any demographic, thus it is not distinctively indicative of a young adult. The absence of common young adult communication traits (like emojis or more informal language often used in short online interactions) further reduces the likelihood."
+    },
+    {
+      "comment_id": "p2_c9",
+      "text": "This is fantastic, Satya! As an AI Digital Transformation Expert, I see Copilot's evolution into a true 'UI for AI' as a game-changer.\n\nThe new Researcher and Analyst agents, coupled with Notebooks, promise to redefine enterprise productivity and workflow efficiency.\n\nAren't we seeing the future of working already...😊",
       "is_young_adult": false,
       "confidence_score": 0.0,
       "keywords_identified": [],
-      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 40.108013338s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 40\n}\n]"
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 44.008635912s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 44\n}\n]"
     },
     {
-      "comment_id": "c008",
-      "author": "Jessica Lee",
-      "text": "OMG YES!! Finally something that gets it. I'm totally vibing with this rn. Gen Z approved! ✨",
+      "comment_id": "p2_c10",
+      "text": "Impressive to see Copilot Researcher agent in action at #M365con",
       "is_young_adult": false,
-      "confidence_score": 0.0,
+      "confidence_score": 0.7,
       "keywords_identified": [
-        "✨",
-        "app",
-        "gen z",
-        "rn",
-        "vibing",
-        "omg"
+        "Absence of emojis",
+        "Use of specific conference hashtag ('#M365con')",
+        "Neutral and concise language style",
+        "Engagement with cutting-edge AI technology ('Copilot Researcher agent')",
+        "Absence of informal slang or highly casual phrasing"
       ],
-      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 39.698134961s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 39\n}\n]"
+      "reasoning": "The comment is professional, concise, and technically informed. While the content (engagement with cutting-edge AI and a tech conference) could align with young professionals, the complete absence of emojis, informal language, or internet slang (as specified in criteria 4 and 5) makes it less distinctively 'likely' from the 18-30 age group compared to a broader range of tech-savvy professionals. Young adults, even on professional platforms like LinkedIn, often incorporate some level of informal expression or emojis."
     },
     {
-      "comment_id": "c009",
-      "author": "David Martinez",
-      "text": "Well done. As a seasoned professional with extensive background in this field, I can attest to the quality of this initiative.",
+      "comment_id": "p2_c11",
+      "text": "This is great",
       "is_young_adult": false,
       "confidence_score": 0.0,
+      "keywords_identified": [],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 27.855028429s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 27\n}\n]"
+    },
+    {
+      "comment_id": "p2_c12",
+      "text": "Exciting developments! Can't wait to explore these new features.",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 27.470915418s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 27\n}\n]"
+    },
+    {
+      "comment_id": "p2_c13",
+      "text": "Cool",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 27.090472183s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 27\n}\n]"
+    },
+    {
+      "comment_id": "p2_c14",
+      "text": "Прекрасная услу @га",
+      "is_young_adult": true,
+      "confidence_score": 0.85,
       "keywords_identified": [
-        "lit"
+        "internet-native text modification/stylization",
+        "deliberate mid-word character insertion ('@')",
+        "casual online communication pattern on a professional platform",
+        "deviation from standard grammar/spelling for stylistic effect"
       ],
-      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 39.276190211s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 39\n}\n]"
+      "reasoning": "The deliberate insertion of the '@' symbol mid-word ('услу@га') is a strong indicator of an internet-native text modification. This stylistic choice, breaking traditional grammar and spelling for visual effect or subtle emphasis, is highly characteristic of younger demographics (Gen Z/young millennials) who are accustomed to playful and non-standard online communication patterns. While the phrase itself is neutral, the modification points towards someone comfortable with and employing modern internet text aesthetics, which is more prevalent in the 18-30 age group."
     },
     {
-      "comment_id": "c010",
-      "author": "Sophie Taylor",
-      "text": "No cap this is bussin! Just started my career and this is giving me major inspo. Let's gooo! 🎉",
+      "comment_id": "p2_c15",
+      "text": "Great update! Microsoft 365 Copilot seems very helpful for work efficiency. I'll definitely give it a try.",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 18.262504825s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 18\n}\n]"
+    },
+    {
+      "comment_id": "p2_c16",
+      "text": "Congrats 🎉 Finally something truly usable also on SMB environments!",
+      "is_young_adult": true,
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "Concise and enthusiastic communication style",
+        "🎉",
+        "Inclusion of '🎉' (party popper) emoji in a professional context",
+        "Implied focus on practical usability in business environments, common for early career professionals or those engaging with new solutions.",
+        "Use of informal abbreviation 'Congrats'"
+      ],
+      "reasoning": "The combination of the informal abbreviation 'Congrats' and the celebratory '🎉' emoji strongly indicates a younger demographic (Gen Z/young millennial) who frequently blend casual communication elements with professional contexts on platforms like LinkedIn. While the mention of 'SMB environments' shows some business acumen, the overall style leans towards younger communication patterns."
+    },
+    {
+      "comment_id": "p2_c17",
+      "text": "Exciting, so looking foward to these.",
+      "is_young_adult": true,
+      "confidence_score": 0.75,
+      "keywords_identified": [
+        "Use of standalone adjective as interjection ('Exciting')",
+        "Informal tone",
+        "Use of 'so' as an intensifier in a casual context",
+        "Brevity",
+        "Minor spelling error ('foward')"
+      ],
+      "reasoning": "The comment displays an informal and concise communication style, characteristic of younger adults online. It uses a standalone adjective ('Exciting') as an interjection, an intensifier ('so') common in enthusiastic casual speech, and a minor spelling error ('foward'), all of which suggest a quick, less formal digital interaction often seen among younger demographics."
+    },
+    {
+      "comment_id": "p2_c18",
+      "text": "Congrats Satya! 🎉",
       "is_young_adult": false,
       "confidence_score": 0.0,
       "keywords_identified": [
-        "no cap",
-        "just started",
-        "bussin",
         "🎉"
       ],
-      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 38.872602343s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 38\n}\n]"
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 2.390147918s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 2\n}\n]"
+    },
+    {
+      "comment_id": "p2_c19",
+      "text": "Satya, these updates to Microsoft 365 Copilot are incredibly impressive! The new Agents feature, especially the Researcher and Analyst, sounds like a game-changer for leveraging complex data insights effortlessly. I also love the idea of the Notebooks making collaboration and organization so seamless. Looking forward to exploring these enhancements! 🚀",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [
+        "🚀",
+        "collab"
+      ],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 1.98247085s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 1\n}\n]"
     }
   ]
 }

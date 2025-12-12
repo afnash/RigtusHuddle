@@ -188,11 +188,10 @@ Provide your analysis in the following JSON format ONLY (no other text):
         results = []
         total = len(comments)
         
-        print(f"\nAnalyzing {total} comments...")
-        print("-" * 80)
+        print(f"\n⏳ Analyzing {total} comments...\n")
         
         for idx, comment in enumerate(comments, 1):
-            print(f"Processing comment {idx}/{total}...", end=" ")
+            print(f"  [{idx}/{total}] ", end="", flush=True)
             analysis = self.analyze_comment(comment)
             results.append(analysis)
             print("✓")
@@ -209,23 +208,23 @@ Provide your analysis in the following JSON format ONLY (no other text):
         """
         young_adult_comments = [a for a in analyses if a.is_young_adult]
         
-        print("\n" + "=" * 80)
-        print("ANALYSIS REPORT - LINKEDIN COMMENTS AGE CLASSIFICATION")
-        print("=" * 80)
-        print(f"\nTotal Comments Analyzed: {len(analyses)}")
-        print(f"Comments from 18-30 Age Group: {len(young_adult_comments)}")
-        print(f"Percentage: {len(young_adult_comments)/len(analyses)*100:.1f}%")
-        print("\n" + "-" * 80)
-        print("COMMENTS IDENTIFIED AS 18-30 AGE GROUP:")
-        print("-" * 80)
+        print(f"\n{'='*60}")
+        print(f"📊 RESULTS")
+        print(f"{'='*60}")
+        print(f"  Total Comments: {len(analyses)}")
+        print(f"  Age 18-30: {len(young_adult_comments)} ({len(young_adult_comments)/len(analyses)*100:.1f}%)")
+        print(f"{'='*60}\n")
         
-        for idx, analysis in enumerate(young_adult_comments, 1):
-            print(f"\n{idx}. Comment ID: {analysis.comment_id}")
-            print(f"   Author: {analysis.author}")
-            print(f"   Text: \"{analysis.text}\"")
-            print(f"   Confidence: {analysis.confidence_score:.2f}")
-            print(f"   Keywords: {', '.join(analysis.keywords_identified) if analysis.keywords_identified else 'None'}")
-            print(f"   Reasoning: {analysis.reasoning}")
+        if young_adult_comments:
+            print("🎯 COMMENTS FROM 18-30 AGE GROUP:\n")
+            for idx, a in enumerate(young_adult_comments, 1):
+                # Truncate long comments
+                text_preview = a.text[:80] + "..." if len(a.text) > 80 else a.text
+                print(f"  {idx}. [{a.comment_id}] Confidence: {a.confidence_score:.2f}")
+                print(f"     \"{text_preview}\"")
+                if a.keywords_identified:
+                    print(f"     Keywords: {', '.join(a.keywords_identified[:5])}")
+                print()
         
         # Generate JSON report
         if output_file:
@@ -237,7 +236,6 @@ Provide your analysis in the following JSON format ONLY (no other text):
                 "young_adult_comments": [
                     {
                         "comment_id": a.comment_id,
-                        "author": a.author,
                         "text": a.text,
                         "confidence_score": a.confidence_score,
                         "keywords_identified": a.keywords_identified,
@@ -248,7 +246,6 @@ Provide your analysis in the following JSON format ONLY (no other text):
                 "all_analyses": [
                     {
                         "comment_id": a.comment_id,
-                        "author": a.author,
                         "text": a.text,
                         "is_young_adult": a.is_young_adult,
                         "confidence_score": a.confidence_score,
@@ -262,10 +259,7 @@ Provide your analysis in the following JSON format ONLY (no other text):
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(report_data, f, indent=2, ensure_ascii=False)
             
-            print(f"\n" + "=" * 80)
-            print(f"Detailed JSON report saved to: {output_file}")
-        
-        print("=" * 80 + "\n")
+            print(f"💾 Report saved: {output_file}\n")
 
 
 def load_comments_from_json(file_path: str) -> List[Dict[str, Any]]:
@@ -281,14 +275,31 @@ def load_comments_from_json(file_path: str) -> List[Dict[str, Any]]:
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
+        
+        all_comments = []
+        
+        # Handle new "posts" format
+        if isinstance(data, dict) and "posts" in data:
+            for post_idx, post in enumerate(data["posts"], 1):
+                post_url = post.get("postUrl", f"post_{post_idx}")
+                comments = post.get("comments", [])
+                
+                for comment_idx, comment_text in enumerate(comments, 1):
+                    all_comments.append({
+                        "comment_id": f"p{post_idx}_c{comment_idx}",
+                        "author": "Unknown",
+                        "text": comment_text,
+                        "post_url": post_url
+                    })
+            return all_comments
             
-        # Handle different JSON structures
-        if isinstance(data, dict) and "comments" in data:
+        # Handle old "comments" format
+        elif isinstance(data, dict) and "comments" in data:
             return data["comments"]
         elif isinstance(data, list):
             return data
         else:
-            raise ValueError("Invalid JSON format. Expected 'comments' key or list of comments")
+            raise ValueError("Invalid JSON format. Expected 'posts' or 'comments' key")
             
     except Exception as e:
         print(f"Error loading JSON file: {e}")
@@ -302,16 +313,15 @@ def main():
     api_key = os.getenv("GEMINI_API_KEY")
     
     if not api_key:
-        print("ERROR: GEMINI_API_KEY environment variable not set!")
-        print("Please set it using: export GEMINI_API_KEY='your-api-key'")
-        print("Or create a .env file with: GEMINI_API_KEY=your-api-key")
+        print("❌ ERROR: GEMINI_API_KEY not set!")
+        print("   export GEMINI_API_KEY='your-api-key'")
         sys.exit(1)
     
     # Get input file from command line or use default
     if len(sys.argv) > 1:
         input_file = sys.argv[1]
     else:
-        input_file = "linkedin_comments_sample.json"
+        input_file = "test.json"
     
     # Get output file from command line or use default
     if len(sys.argv) > 2:
@@ -319,11 +329,8 @@ def main():
     else:
         output_file = "age_classification_report.json"
     
-    print("=" * 80)
-    print("LINKEDIN COMMENTS AGE CLASSIFIER AGENT")
-    print("=" * 80)
-    print(f"\nInput file: {input_file}")
-    print(f"Output file: {output_file}")
+    print(f"\n🤖 LinkedIn Age Classifier")
+    print(f"📁 Input: {input_file}")
     
     # Load comments
     comments = load_comments_from_json(input_file)
