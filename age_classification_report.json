@@ -1,0 +1,232 @@
+{
+  "analysis_timestamp": "2025-12-12T23:08:21.402656",
+  "total_comments": 10,
+  "young_adult_comments_count": 4,
+  "percentage": 40.0,
+  "young_adult_comments": [
+    {
+      "comment_id": "c001",
+      "author": "Alex Johnson",
+      "text": "Yooo this is fire! 🔥 Can't wait to try it out. Congrats fam!",
+      "confidence_score": 0.98,
+      "keywords_identified": [
+        "fire",
+        "yooo",
+        "fam (informal term of endearment, common among younger generations)",
+        "Yooo (informal greeting)",
+        "🔥",
+        "this is fire! (modern slang for excellent/amazing)",
+        "overall casual and enthusiastic language style",
+        "🔥 emoji (reinforces slang, common in youth digital communication)",
+        "fam"
+      ],
+      "reasoning": "The comment exhibits several strong indicators of communication patterns common among young adults (18-30). It uses highly informal slang ('Yooo', 'fire', 'fam'), an emoji (🔥) to emphasize meaning, and an overall very casual and enthusiastic tone. These linguistic choices are characteristic of Gen Z and young millennials and are less frequently adopted by older demographics, especially in a public-facing professional context like LinkedIn."
+    },
+    {
+      "comment_id": "c003",
+      "author": "Mike Chen",
+      "text": "Dude this looks sick! Just graduated and looking for opportunities like this. Let's connect!",
+      "confidence_score": 0.98,
+      "keywords_identified": [
+        "dude",
+        "sick (slang for impressive/cool)",
+        "looking for opportunities like this (early career job search)",
+        "Dude (casual address)",
+        "Just graduated (career stage)",
+        "graduated",
+        "sick"
+      ],
+      "reasoning": "The comment uses highly informal language and contemporary slang ('Dude', 'sick') which is prevalent among younger demographics. The strongest indicator is 'Just graduated', which places the individual in the early career stage, typically aligning with the 18-30 age bracket (e.g., recent college graduates). The overall tone is enthusiastic and direct, characteristic of young professionals navigating their initial career steps."
+    },
+    {
+      "comment_id": "c005",
+      "author": "Tyler Brown",
+      "text": "lit af bro 💯 gonna share this with my squad. btw we should collab on some projects",
+      "confidence_score": 0.98,
+      "keywords_identified": [
+        "collab",
+        "lit af",
+        "af",
+        "squad",
+        "bro",
+        "my squad",
+        "btw",
+        "gonna",
+        "💯",
+        "lit"
+      ],
+      "reasoning": "The comment is saturated with slang, internet abbreviations, and emojis commonly used by young adults (Gen Z and young millennials). The casual tone and direct invitation to 'collab on some projects' also suggest someone in an early career stage or student phase looking to network informally."
+    },
+    {
+      "comment_id": "c006",
+      "author": "Emma Davis",
+      "text": "This is amazing! I'm in college studying CS and this is exactly what I've been looking for. Would love to learn more!",
+      "confidence_score": 0.95,
+      "keywords_identified": [
+        "Enthusiastic tone ('amazing!', '!')",
+        "studying",
+        "college",
+        "Explicit mention of 'in college'",
+        "Expressed desire to 'learn more' relevant to their studies/career path.",
+        "rn",
+        "Studying 'CS' (Computer Science), a common abbreviation used by students and professionals in the field."
+      ],
+      "reasoning": "The commenter explicitly states they are 'in college studying CS', which directly places them within the typical 18-22 age range, making it highly probable they are within the 18-30 young adult demographic. The enthusiastic yet professional language and clear interest in a career-relevant topic also align with this age group."
+    }
+  ],
+  "all_analyses": [
+    {
+      "comment_id": "c001",
+      "author": "Alex Johnson",
+      "text": "Yooo this is fire! 🔥 Can't wait to try it out. Congrats fam!",
+      "is_young_adult": true,
+      "confidence_score": 0.98,
+      "keywords_identified": [
+        "fire",
+        "yooo",
+        "fam (informal term of endearment, common among younger generations)",
+        "Yooo (informal greeting)",
+        "🔥",
+        "this is fire! (modern slang for excellent/amazing)",
+        "overall casual and enthusiastic language style",
+        "🔥 emoji (reinforces slang, common in youth digital communication)",
+        "fam"
+      ],
+      "reasoning": "The comment exhibits several strong indicators of communication patterns common among young adults (18-30). It uses highly informal slang ('Yooo', 'fire', 'fam'), an emoji (🔥) to emphasize meaning, and an overall very casual and enthusiastic tone. These linguistic choices are characteristic of Gen Z and young millennials and are less frequently adopted by older demographics, especially in a public-facing professional context like LinkedIn."
+    },
+    {
+      "comment_id": "c002",
+      "author": "Sarah Mitchell",
+      "text": "As someone with 25 years of experience in the industry, I believe this is a solid foundation. Best wishes for your venture.",
+      "is_young_adult": false,
+      "confidence_score": 1.0,
+      "keywords_identified": [
+        "Professional vocabulary ('solid foundation', 'venture')",
+        "25 years of experience in the industry",
+        "Formal language style",
+        "Absence of emojis or internet slang"
+      ],
+      "reasoning": "The comment explicitly states '25 years of experience in the industry.' Assuming a person starts their career around 18-25 years old, 25 years of experience would place their current age at 43-50 years old at a minimum, well outside the 18-30 age bracket. The language style is also formal and professional, completely lacking any slang, emojis, or casual expressions typically associated with younger demographics on social platforms like LinkedIn."
+    },
+    {
+      "comment_id": "c003",
+      "author": "Mike Chen",
+      "text": "Dude this looks sick! Just graduated and looking for opportunities like this. Let's connect!",
+      "is_young_adult": true,
+      "confidence_score": 0.98,
+      "keywords_identified": [
+        "dude",
+        "sick (slang for impressive/cool)",
+        "looking for opportunities like this (early career job search)",
+        "Dude (casual address)",
+        "Just graduated (career stage)",
+        "graduated",
+        "sick"
+      ],
+      "reasoning": "The comment uses highly informal language and contemporary slang ('Dude', 'sick') which is prevalent among younger demographics. The strongest indicator is 'Just graduated', which places the individual in the early career stage, typically aligning with the 18-30 age bracket (e.g., recent college graduates). The overall tone is enthusiastic and direct, characteristic of young professionals navigating their initial career steps."
+    },
+    {
+      "comment_id": "c004",
+      "author": "Jennifer Williams",
+      "text": "Congratulations! Having worked in senior management for two decades, I appreciate innovative solutions. Keep up the excellent work.",
+      "is_young_adult": false,
+      "confidence_score": 1.0,
+      "keywords_identified": [
+        "absence of emojis or internet slang",
+        "professional vocabulary and expressions ('innovative solutions', 'excellent work')",
+        "app",
+        "formal and professional language style",
+        "reference to 'senior management'",
+        "explicit mention of 'two decades' of experience"
+      ],
+      "reasoning": "The commenter explicitly states having 'worked in senior management for two decades,' which is impossible for someone in the 18-30 age group. An individual in this age bracket would not have accumulated 20 years of professional experience, let alone in senior management. The language is also highly formal and professional, lacking the casualness, slang, or emojis often associated with young adults."
+    },
+    {
+      "comment_id": "c005",
+      "author": "Tyler Brown",
+      "text": "lit af bro 💯 gonna share this with my squad. btw we should collab on some projects",
+      "is_young_adult": true,
+      "confidence_score": 0.98,
+      "keywords_identified": [
+        "collab",
+        "lit af",
+        "af",
+        "squad",
+        "bro",
+        "my squad",
+        "btw",
+        "gonna",
+        "💯",
+        "lit"
+      ],
+      "reasoning": "The comment is saturated with slang, internet abbreviations, and emojis commonly used by young adults (Gen Z and young millennials). The casual tone and direct invitation to 'collab on some projects' also suggest someone in an early career stage or student phase looking to network informally."
+    },
+    {
+      "comment_id": "c006",
+      "author": "Emma Davis",
+      "text": "This is amazing! I'm in college studying CS and this is exactly what I've been looking for. Would love to learn more!",
+      "is_young_adult": true,
+      "confidence_score": 0.95,
+      "keywords_identified": [
+        "Enthusiastic tone ('amazing!', '!')",
+        "studying",
+        "college",
+        "Explicit mention of 'in college'",
+        "Expressed desire to 'learn more' relevant to their studies/career path.",
+        "rn",
+        "Studying 'CS' (Computer Science), a common abbreviation used by students and professionals in the field."
+      ],
+      "reasoning": "The commenter explicitly states they are 'in college studying CS', which directly places them within the typical 18-22 age range, making it highly probable they are within the 18-30 young adult demographic. The enthusiastic yet professional language and clear interest in a career-relevant topic also align with this age group."
+    },
+    {
+      "comment_id": "c007",
+      "author": "Robert Anderson",
+      "text": "Impressive work. In my 30+ years as an executive, I've seen many startups. This has potential. Let's schedule a meeting to discuss investment opportunities.",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 40.108013338s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 40\n}\n]"
+    },
+    {
+      "comment_id": "c008",
+      "author": "Jessica Lee",
+      "text": "OMG YES!! Finally something that gets it. I'm totally vibing with this rn. Gen Z approved! ✨",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [
+        "✨",
+        "app",
+        "gen z",
+        "rn",
+        "vibing",
+        "omg"
+      ],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 39.698134961s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 39\n}\n]"
+    },
+    {
+      "comment_id": "c009",
+      "author": "David Martinez",
+      "text": "Well done. As a seasoned professional with extensive background in this field, I can attest to the quality of this initiative.",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [
+        "lit"
+      ],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 39.276190211s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 39\n}\n]"
+    },
+    {
+      "comment_id": "c010",
+      "author": "Sophie Taylor",
+      "text": "No cap this is bussin! Just started my career and this is giving me major inspo. Let's gooo! 🎉",
+      "is_young_adult": false,
+      "confidence_score": 0.0,
+      "keywords_identified": [
+        "no cap",
+        "just started",
+        "bussin",
+        "🎉"
+      ],
+      "reasoning": "Error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 38.872602343s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 5\n}\n, retry_delay {\n  seconds: 38\n}\n]"
+    }
+  ]
+}

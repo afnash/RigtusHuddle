@@ -1,0 +1,68 @@
+{
+  "post_id": "linkedin_post_12345",
+  "post_title": "Just launched my new startup! 🚀",
+  "post_date": "2025-12-10",
+  "comments": [
+    {
+      "comment_id": "c001",
+      "author": "Alex Johnson",
+      "text": "Yooo this is fire! 🔥 Can't wait to try it out. Congrats fam!",
+      "timestamp": "2025-12-10T10:30:00Z"
+    },
+    {
+      "comment_id": "c002",
+      "author": "Sarah Mitchell",
+      "text": "As someone with 25 years of experience in the industry, I believe this is a solid foundation. Best wishes for your venture.",
+      "timestamp": "2025-12-10T11:15:00Z"
+    },
+    {
+      "comment_id": "c003",
+      "author": "Mike Chen",
+      "text": "Dude this looks sick! Just graduated and looking for opportunities like this. Let's connect!",
+      "timestamp": "2025-12-10T12:00:00Z"
+    },
+    {
+      "comment_id": "c004",
+      "author": "Jennifer Williams",
+      "text": "Congratulations! Having worked in senior management for two decades, I appreciate innovative solutions. Keep up the excellent work.",
+      "timestamp": "2025-12-10T12:30:00Z"
+    },
+    {
+      "comment_id": "c005",
+      "author": "Tyler Brown",
+      "text": "lit af bro 💯 gonna share this with my squad. btw we should collab on some projects",
+      "timestamp": "2025-12-10T13:00:00Z"
+    },
+    {
+      "comment_id": "c006",
+      "author": "Emma Davis",
+      "text": "This is amazing! I'm in college studying CS and this is exactly what I've been looking for. Would love to learn more!",
+      "timestamp": "2025-12-10T13:45:00Z"
+    },
+    {
+      "comment_id": "c007",
+      "author": "Robert Anderson",
+      "text": "Impressive work. In my 30+ years as an executive, I've seen many startups. This has potential. Let's schedule a meeting to discuss investment opportunities.",
+      "timestamp": "2025-12-10T14:15:00Z"
+    },
+    {
+      "comment_id": "c008",
+      "author": "Jessica Lee",
+      "text": "OMG YES!! Finally something that gets it. I'm totally vibing with this rn. Gen Z approved! ✨",
+      "timestamp": "2025-12-10T15:00:00Z"
+    },
+    {
+      "comment_id": "c009",
+      "author": "David Martinez",
+      "text": "Well done. As a seasoned professional with extensive background in this field, I can attest to the quality of this initiative.",
+      "timestamp": "2025-12-10T15:30:00Z"
+    },
+    {
+      "comment_id": "c010",
+      "author": "Sophie Taylor",
+      "text": "No cap this is bussin! Just started my career and this is giving me major inspo. Let's gooo! 🎉",
+      "timestamp": "2025-12-10T16:00:00Z"
+    }
+  ]
+}
+
