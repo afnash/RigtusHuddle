@@ -3,10 +3,10 @@ from google.genai import types
 from tools.load_json import load_linkedin_comments
 import os
 
-def run_analysis(data_file="linkedin_comments.json"):
+def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
     """
-    Runs the multi-agent analysis on the provided data file.
-    Returns a dictionary with the results.
+    Runs the multi-agent analysis.
+    platform: 'linkedin' or 'instagram'
     """
     results = {
         "youth_analysis": "",
@@ -15,7 +15,7 @@ def run_analysis(data_file="linkedin_comments.json"):
         "error": None
     }
 
-    print(f"STEP 1: Starting analysis on {data_file}...")
+    print(f"STEP 1: Starting analysis on {data_file} for {platform}...")
 
     try:
         client = genai.Client()
@@ -29,8 +29,6 @@ def run_analysis(data_file="linkedin_comments.json"):
     # Helper to load prompts safely
     def load_prompt(filename):
         try:
-            # Construct absolute path or ensure relative path works
-            # We assume prompts are in the 'prompts' subdirectory relative to this file
             base_dir = os.path.dirname(os.path.abspath(__file__))
             path = os.path.join(base_dir, "prompts", filename)
             with open(path, "r") as f:
@@ -39,13 +37,28 @@ def run_analysis(data_file="linkedin_comments.json"):
             print(f"❌ ERROR: Cannot load prompt {filename}: {e}")
             return None
 
+    # Determine Prompts based on Platform
+    if platform.lower() == "instagram":
+        prompt_youth = "analyze_instagram_18_30.prompt"
+        prompt_adult = "analyze_instagram_30_50.prompt"
+        data_source_name = "instagram_comments.json" # Assuming we might want to differentiate later, or re-use logic
+    else:
+        prompt_youth = "analyze_campaign.prompt"
+        prompt_adult = "analyze_campaign_30_50.prompt"
+        data_source_name = "linkedin_comments.json"
+        
+    # Fallback to existing file if specific one missing (for hackathon demo)
+    if not os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", data_source_name)):
+         # If instagram file doesn't exist, use the linkedin one as mock data or whatever was passed
+         data_source_name = data_file 
+
     # --- Agent for 18-30 Age Group ---
     try:
-        instructions = load_prompt("analyze_campaign.prompt")
+        instructions = load_prompt(prompt_youth)
         if not instructions:
-            raise Exception("Failed to load analyze_campaign.prompt")
+            raise Exception(f"Failed to load {prompt_youth}")
         
-        print("STEP 3: Loaded prompt (18-30).")
+        print(f"STEP 3: Loaded prompt (18-30) for {platform}.")
 
         chat = client.chats.create(
             model="gemini-2.5-flash",
@@ -57,14 +70,9 @@ def run_analysis(data_file="linkedin_comments.json"):
         print("STEP 4: Chat session (18-30) created.")
 
         print("STEP 5: Sending message to agent (18-30)...")
-        # We pass the filename to the prompt/tool if needed, or just rely on the tool knowing what to do.
-        # The prompt in main.py hardcoded 'linkedin_comments.json'. 
-        # Ideally we should pass the filename if the tool accepts it, but load_linkedin_comments might be fixed.
-        # Let's inspect tools/load_json.py if possible, but for now we follow main.py pattern.
-        # main.py message: "Please load the linkedin comments from 'linkedin_comments.json'..."
         
         response = chat.send_message(
-            message=f"Please load the linkedin comments from '{data_file}' and analyze them according to the instructions."
+            message=f"Please load the comments from '{data_source_name}' and analyze them according to the instructions for {platform}."
         )
 
         print("STEP 6: Response (18-30) received.")
@@ -72,18 +80,15 @@ def run_analysis(data_file="linkedin_comments.json"):
 
     except Exception as e:
         print(f"❌ ERROR during 18-30 agent execution: {e}")
-        # We might continue or return error depending on strictness. 
-        # Let's continue to try other agents but note the error?
-        # For now, if this fails, strategy will likely fail too.
 
     # --- Agent for 30-50 Age Group ---
     print("-" * 30)
     try:
-        instructions_30_50 = load_prompt("analyze_campaign_30_50.prompt")
+        instructions_30_50 = load_prompt(prompt_adult)
         if not instructions_30_50:
-            raise Exception("Failed to load analyze_campaign_30_50.prompt")
+            raise Exception(f"Failed to load {prompt_adult}")
             
-        print("STEP 7: Loaded 30-50 prompt.")
+        print(f"STEP 7: Loaded 30-50 prompt for {platform}.")
         
         chat_30_50 = client.chats.create(
             model="gemini-2.5-flash", 
@@ -96,7 +101,7 @@ def run_analysis(data_file="linkedin_comments.json"):
         
         print("STEP 9: Sending message to agent (30-50)...")
         response_30_50 = chat_30_50.send_message(
-            message=f"Please load the linkedin comments from '{data_file}' and analyze them for the 30-50 age group."
+            message=f"Please load the comments from '{data_source_name}' and analyze them for the 30-50 age group on {platform}."
         )
         
         print("STEP 10: Response (30-50) received.")

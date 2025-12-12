@@ -25,6 +25,11 @@ def analyze():
     
     print(f"Received request to analyze: {url} (Method: {request.method})")
     
+    # Detect platform
+    platform = "linkedin"
+    if url and "instagram" in url.lower():
+        platform = "instagram"
+    
     # In a real production app, we would scrape the URL (LinkedIn/Instagram) here.
     # For this Hackathon implementation, we use the local 'linkedin_comments.json'
     # as our data source to demonstrate the Multi-Agent capabilities.
@@ -33,7 +38,7 @@ def analyze():
         # Run the agent logic
         # We assume linkedin_comments.json is in the same directory
         # In the future, 'url' could determine which file or scraper to use.
-        results = run_analysis("linkedin_comments.json")
+        results = run_analysis("linkedin_comments.json", platform=platform)
         
         if results.get("error"):
             return jsonify({"success": False, "error": results["error"]}), 500
