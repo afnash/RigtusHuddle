@@ -76,18 +76,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Update Results
                     if (data.success && data.data) {
-                        const strategy = data.data.strategy || "No strategy generated.";
-                        const summary = "Analysis complete. See full strategy below which combines insights from both Youth and Adult demographics.";
+                        // Parse Strategy JSON
+                        let strategyData = null;
+                        try {
+                            // Clean up potential markdown code blocks if present (e.g. ```json ... ```)
+                            const rawStrategy = (data.data.strategy || "{}").replace(/```json/g, '').replace(/```/g, '').trim();
+                            strategyData = JSON.parse(rawStrategy);
+                        } catch (e) {
+                            console.warn("Could not parse strategy JSON:", e);
+                            strategyData = { final_verdict: data.data.strategy }; // Fallback
+                        }
 
-                        // Simple text format
-                        const summaryEl = document.getElementById('summaryText');
-                        if (summaryEl) summaryEl.innerText = summary;
-
+                        // 1. Render Final Verdict
                         const verdictEl = document.getElementById('verdictText');
-                        if (verdictEl) {
-                            // The strategy text is markdown, but we'll specific simplistic display
-                            // Replacing newlines with <br> for basic formatting
-                            verdictEl.innerHTML = strategy.replace(/\n/g, '<br>');
+                        if (verdictEl && strategyData.final_verdict) {
+                            verdictEl.innerHTML = strategyData.final_verdict;
+                        }
+
+                        // 2. Render Suggestions (Improvements)
+                        const improvementList = document.getElementById('improvementList');
+                        if (improvementList && strategyData.strategic_suggestions && Array.isArray(strategyData.strategic_suggestions)) {
+                            improvementList.innerHTML = strategyData.strategic_suggestions.map(item => {
+                                // Determine icon based on priority or random
+                                let icon = 'fa-lightbulb';
+                                if (item.priority === 'High') icon = 'fa-star';
+                                else if (item.priority === 'Medium') icon = 'fa-arrow-trend-up';
+
+                                return `
+                                <li>
+                                    <i class="fa-solid ${icon}"></i>
+                                    <div>
+                                        <strong>${item.title}</strong> <span style="font-size:0.7em; text-transform:uppercase; opacity:0.7; border:1px solid #555; padding:2px 5px; border-radius:4px; margin-left:5px;">${item.priority}</span><br>
+                                        <span style="color: #bbb;">${item.description}</span>
+                                    </div>
+                                </li>
+                            `}).join('');
+                        }
+
+                        // 3. Render Summary (Shared Positives)
+                        const summaryEl = document.getElementById('summaryText');
+                        if (summaryEl) {
+                            if (strategyData.shared_positives && strategyData.shared_positives.length > 0) {
+                                summaryEl.innerHTML = "<strong>Key Strengths Analyzed:</strong><br><br>" +
+                                    strategyData.shared_positives.map(p => `<i class="fa-solid fa-check" style="color:var(--primary-neon); margin-right:5px;"></i> ${p}`).join('<br>');
+                            } else {
+                                summaryEl.innerText = "Analysis complete. Review the strategy below for details.";
+                            }
                         }
                     }
 

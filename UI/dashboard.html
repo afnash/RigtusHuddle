@@ -140,54 +140,45 @@
                         </p>
                     </div>
 
-                    <div class="card col-span-8">
-                        <div class="card-header">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggested Improvements
-                        </div>
-                        <ul class="improvement-list">
-                            <li>
-                                <i class="fa-solid fa-check-circle"></i>
-                                <div>
-                                    <strong>Hook needs more punch.</strong><br>
-                                    <span style="color: #bbb;">Try starting with "Stop working 10 hours a day..."
-                                        instead of "Do you work long hours?" to trigger immediate curiosity.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-video"></i>
-                                <div>
-                                    <strong>Visual pacing is too slow.</strong><br>
-                                    <span style="color: #bbb;">The first 3 seconds of the video are static. Add a quick
-                                        zoom or text overlay transition to retain retention.</span>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="card-header">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggested Improvements
                     </div>
-
-                    <!-- Row 4: Final Verdict -->
-                    <div class="card verdict-card verdict-glow col-span-12">
-                        <div class="verdict-title">
-                            <i class="fa-solid fa-robot"></i> FINAL VERDICT
-                        </div>
-                        <div class="verdict-text" id="verdictText">
-                            "This post has <strong>massive potential</strong> for LinkedIn. The core message is solid,
-                            but the execution feels slightly generic. By sharpening the hook and increasing visual
-                            dynamism in the first 3 seconds, you could easily see a <strong>2-3x lift in
-                                engagement</strong>. It fits the 'Hustle Culture' trend perfectly but needs more
-                            authentic storytelling."
-                        </div>
-                        <button class="analyze-btn"
-                            style="position: relative; right: auto; top: auto; bottom: auto; background: rgba(255,255,255,0.1); border: 1px solid white;">
-                            Generate Copy Variants <i class="fa-solid fa-pen-nib"></i>
-                        </button>
-                        <a href="index.html"
-                            style="margin-left: 20px; color: var(--text-muted); text-decoration:none; font-size: 0.9rem;">Start
-                            Over</a>
-                    </div>
-
+                    <ul class="improvement-list" id="improvementList">
+                        <!-- Populated via JS -->
+                        <li>
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                            <div>
+                                <strong>Generating suggestions...</strong><br>
+                                <span style="color: #bbb;">Please wait while we synthesize the strategy.</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+
+                <!-- Row 4: Final Verdict -->
+                <div class="card verdict-card verdict-glow col-span-12">
+                    <div class="verdict-title">
+                        <i class="fa-solid fa-robot"></i> FINAL VERDICT
+                    </div>
+                    <div class="verdict-text" id="verdictText">
+                        "This post has <strong>massive potential</strong> for LinkedIn. The core message is solid,
+                        but the execution feels slightly generic. By sharpening the hook and increasing visual
+                        dynamism in the first 3 seconds, you could easily see a <strong>2-3x lift in
+                            engagement</strong>. It fits the 'Hustle Culture' trend perfectly but needs more
+                        authentic storytelling."
+                    </div>
+                    <button class="analyze-btn"
+                        style="position: relative; right: auto; top: auto; bottom: auto; background: rgba(255,255,255,0.1); border: 1px solid white;">
+                        Generate Copy Variants <i class="fa-solid fa-pen-nib"></i>
+                    </button>
+                    <a href="index.html"
+                        style="margin-left: 20px; color: var(--text-muted); text-decoration:none; font-size: 0.9rem;">Start
+                        Over</a>
+                </div>
+
             </div>
-        </main>
+    </div>
+    </main>
     </div>
 
     <!-- App Logic -->
