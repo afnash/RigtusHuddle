@@ -6,12 +6,24 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-@app.route('/analyze', methods=['POST'])
+@app.route('/', methods=['GET'])
+def health_check():
+    return jsonify({"status": "running", "message": "Backend Agent Server is up and running. Use POST /analyze to analyze data."})
+
+@app.route('/analyze', methods=['GET', 'POST'])
 def analyze():
-    data = request.json
-    url = data.get('url')
+    # Handle both GET (browser/query param) and POST (API/JSON)
+    if request.method == 'GET':
+        url = request.args.get('url')
+    else:
+        data = request.json or {}
+        url = data.get('url')
     
-    print(f"Received request to analyze: {url}")
+    # Default to "demo" (local file) if no URL provided
+    if not url:
+        url = "demo"
+    
+    print(f"Received request to analyze: {url} (Method: {request.method})")
     
     # In a real production app, we would scrape the URL (LinkedIn/Instagram) here.
     # For this Hackathon implementation, we use the local 'linkedin_comments.json'
@@ -20,6 +32,7 @@ def analyze():
     try:
         # Run the agent logic
         # We assume linkedin_comments.json is in the same directory
+        # In the future, 'url' could determine which file or scraper to use.
         results = run_analysis("linkedin_comments.json")
         
         if results.get("error"):
