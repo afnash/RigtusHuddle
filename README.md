@@ -38,7 +38,7 @@
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/yourusername/AdSage-AI.git
+    git clone https://github.com/yourusername/RigtusHuddle.git
     cd AdSage-AI
     ```
 
