@@ -54,7 +54,7 @@ def analyze():
                 platform = "instagram"
             
             # Post-Launch Analysis (Existing)
-            results = run_analysis("linkedin_comments.json", platform=platform)
+            results = run_analysis("linkedin_comments.json", platform=platform, url=url)
             
             summary_text = "Analysis of comments for the campaign."
 
