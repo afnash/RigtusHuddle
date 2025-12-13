@@ -59,25 +59,16 @@
                         </div>
                     </div>
 
+
                     <!-- Tone Analysis -->
                     <div class="card col-span-4"
                         style="background: rgba(112, 0, 255, 0.1); border-color: rgba(112, 0, 255, 0.3);">
                         <div class="card-header">
                             <i class="fa-solid fa-wave-square"></i> Tone + Emotion
                         </div>
-                        <div style="margin-top: 0.5rem;">
-                            <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span>Inspirational</span>
-                                <span style="color: var(--primary-neon);">88%</span>
-                            </div>
-                            <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span>Urgent</span>
-                                <span style="color: var(--accent-pink);">60%</span>
-                            </div>
-                            <div class="flex" style="justify-content: space-between;">
-                                <span>Relatable</span>
-                                <span style="color: var(--secondary-violet);">92%</span>
-                            </div>
+                        <div style="margin-top: 0.5rem;" id="toneContainer">
+                            <!-- Helper for loading state -->
+                            <div class="loading-pulse"></div>
                         </div>
                     </div>
 
@@ -86,17 +77,16 @@
                         <div class="card-header">
                             <i class="fa-solid fa-bolt"></i> Engagement
                         </div>
-                        <div class="metric-big">8.5/10</div>
-                        <div class="metric-label">Top 15% of your niche</div>
+                        <div class="metric-big" id="engagementScore">-</div>
+                        <div class="metric-label" id="engagementLabel">Analyzing potential...</div>
                     </div>
 
                     <div class="card col-span-3">
                         <div class="card-header">
                             <i class="fa-solid fa-fire"></i> Virality
                         </div>
-                        <div class="metric-big" style="color: var(--primary-neon);">High <span
-                                class="virality-badge">Trending</span></div>
-                        <div class="metric-label">Velocity increasing</div>
+                        <div class="metric-big" style="color: var(--primary-neon);" id="viralityScore">-</div>
+                        <div class="metric-label">Velocity Prediction</div>
                     </div>
 
                     <div class="card col-span-6">
@@ -122,22 +112,13 @@
                         </div>
                     </div>
 
-                    <!-- Row 3: Hashtags & Improvements -->
-                    <div class="card col-span-4">
-                        <div class="card-header">
-                            <i class="fa-solid fa-hashtag"></i> Hashtag Strategy
+                    <!-- Row 3: Strategy (Switchable) -->
+                    <div class="card col-span-4" id="strategyCard">
+                        <!-- Dynamic Content: Hashtags OR Pros/Cons -->
+                        <div class="card-header" id="strategyTitle">
+                            <i class="fa-solid fa-hashtag"></i> Strategy
                         </div>
-                        <div class="tags-container">
-                            <div class="tag hot">#ProductivityHacks</div>
-                            <div class="tag hot">#WorkSmart</div>
-                            <div class="tag">#MondayMotivation</div>
-                            <div class="tag">#TechLife</div>
-                            <div class="tag">#RemoteWork</div>
-                        </div>
-                        <p style="font-size: 0.8rem; color: #888; margin-top: 1rem;">
-                            <i class="fa-solid fa-arrow-trend-up"></i> <strong>#ProductivityHacks</strong> is currently
-                            trending +200% this week.
-                        </p>
+                        <div id="strategyContent"></div>
                     </div>
 
                     <div class="card col-span-8">
@@ -154,6 +135,29 @@
                                 </div>
                             </li>
                         </ul>
+
+                        <!-- Apply Suggestions Button -->
+                        <div
+                            style="margin-top: 1.5rem; text-align: right; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                            <button class="analyze-btn" id="btnApplySuggestions"
+                                style="position: relative; right: auto; top: auto; width: auto;">
+                                Apply Suggestions <i class="fa-solid fa-wand-sparkles"></i>
+                            </button>
+                        </div>
+
+                        <!-- Applied Results (Hidden) -->
+                        <div id="appliedResults" class="hidden"
+                            style="margin-top: 1.5rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px;">
+                            <h4 style="color: var(--primary-neon); margin-bottom: 0.5rem;">Optimized Copy</h4>
+                            <div class="input-box area"
+                                style="height: auto; margin-bottom: 1rem; font-size: 0.9rem; color: #fff;"
+                                id="newContentOutput"></div>
+
+                            <h4 style="color: var(--accent-pink); margin-bottom: 0.5rem;">Visual Prompt for GenAI</h4>
+                            <div class="input-box area"
+                                style="height: auto; font-size: 0.9rem; color: #ccc; font-style: italic;"
+                                id="newImagePrompt"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -165,12 +169,8 @@
                     <div class="verdict-text" id="verdictText">
                         <!-- Populated via JS -->
                     </div>
-                    <button class="analyze-btn"
-                        style="position: relative; right: auto; top: auto; bottom: auto; background: rgba(255,255,255,0.1); border: 1px solid white;">
-                        Generate Copy Variants <i class="fa-solid fa-pen-nib"></i>
-                    </button>
                     <a href="index.html"
-                        style="margin-left: 20px; color: var(--text-muted); text-decoration:none; font-size: 0.9rem;">Start
+                        style="color: var(--text-muted); text-decoration:none; font-size: 0.9rem;">Start
                         Over</a>
                 </div>
 

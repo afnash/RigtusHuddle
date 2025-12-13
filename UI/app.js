@@ -289,6 +289,121 @@ document.addEventListener('DOMContentLoaded', () => {
                 summaryEl.innerHTML = data.summary || "Analysis complete.";
             }
         }
+
+        // 4. Render Dynamic Tone Analysis
+        const toneContainer = document.getElementById('toneContainer');
+        if (toneContainer) {
+            const tone = strategyData.tone_analysis || { label: "Unknown", score: 0 };
+            toneContainer.innerHTML = `
+                <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>${tone.label}</span>
+                    <span style="color: var(--primary-neon);">${tone.score}%</span>
+                </div>
+                <div style="width:100%; height:4px; background:rgba(255,255,255,0.1); border-radius:2px;">
+                    <div style="width:${tone.score}%; height:100%; background:var(--primary-neon); border-radius:2px;"></div>
+                </div>
+            `;
+        }
+
+        // 5. Render Engagement Metrics
+        const engScore = document.getElementById('engagementScore');
+        const engLabel = document.getElementById('engagementLabel');
+        const virScore = document.getElementById('viralityScore');
+
+        if (engScore && strategyData.engagement_metrics) {
+            engScore.innerText = strategyData.engagement_metrics.score || "N/A";
+            engLabel.innerText = strategyData.engagement_metrics.explanation || "Based on visual appeal";
+            virScore.innerHTML = `${strategyData.engagement_metrics.virality || "Medium"} <span class="virality-badge">Predicted</span>`;
+        }
+
+        // 6. Render Strategy Column (Hashtags vs Pros/Cons)
+        const stratTitle = document.getElementById('strategyTitle');
+        const stratContent = document.getElementById('strategyContent');
+        const mode = localStorage.getItem('adsage_mode');
+
+        if (stratContent) {
+            if (mode === 'pre' && strategyData.pros_cons) {
+                // Render Pros & Cons
+                stratTitle.innerHTML = '<i class="fa-solid fa-scale-balanced"></i> Pros & Cons';
+                stratContent.innerHTML = `
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--primary-neon);"><i class="fa-solid fa-thumbs-up"></i> Pros</strong>
+                        <ul style="list-style: none; margin-top: 0.5rem; font-size: 0.85rem; color: #ccc;">
+                            ${(strategyData.pros_cons.pros || []).map(p => `<li style="margin-bottom:4px;">+ ${p}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div>
+                        <strong style="color: var(--accent-pink);"><i class="fa-solid fa-thumbs-down"></i> Cons</strong>
+                         <ul style="list-style: none; margin-top: 0.5rem; font-size: 0.85rem; color: #ccc;">
+                            ${(strategyData.pros_cons.cons || []).map(c => `<li style="margin-bottom:4px;">- ${c}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            } else if (strategyData.hashtag_strategy) {
+                // Render Hashtags
+                stratTitle.innerHTML = '<i class="fa-solid fa-hashtag"></i> Hashtag Strategy';
+                stratContent.innerHTML = `
+                    <div class="tags-container">
+                        ${(strategyData.hashtag_strategy.trending || []).map(t => `<div class="tag hot">${t}</div>`).join('')}
+                        ${(strategyData.hashtag_strategy.niche || []).map(t => `<div class="tag">${t}</div>`).join('')}
+                    </div>
+                    <p style="font-size: 0.8rem; color: #888; margin-top: 1rem;">
+                        <i class="fa-solid fa-info-circle"></i> ${strategyData.hashtag_strategy.insight || "AI suggested tags."}
+                    </p>
+                `;
+            }
+        }
+
+        // 7. Setup Apply Suggestions Button
+        const btnApply = document.getElementById('btnApplySuggestions');
+        if (btnApply) {
+            // Remove old listeners to prevent duplicates if re-rendered
+            const newBtn = btnApply.cloneNode(true);
+            btnApply.parentNode.replaceChild(newBtn, btnApply);
+
+            newBtn.addEventListener('click', () => {
+                const resultsArea = document.getElementById('appliedResults');
+                const contentOut = document.getElementById('newContentOutput');
+                const imageOut = document.getElementById('newImagePrompt');
+
+                newBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Applying...';
+                newBtn.disabled = true;
+
+                const suggestionsText = strategyData.strategic_suggestions.map(s => s.description).join('\n');
+
+                fetch('http://127.0.0.1:5000/apply-suggestions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        image: localStorage.getItem('adsage_image'),
+                        content: localStorage.getItem('adsage_text') || localStorage.getItem('adsage_url'),
+                        suggestions: suggestionsText
+                    })
+                })
+                    .then(res => res.json())
+                    .then(resData => {
+                        newBtn.innerHTML = 'Apply Suggestions <i class="fa-solid fa-wand-sparkles"></i>';
+                        newBtn.disabled = false;
+
+                        if (resData.success) {
+                            const parsed = JSON.parse(resData.data);
+                            resultsArea.classList.remove('hidden');
+                            contentOut.innerText = parsed.new_content;
+                            imageOut.innerText = parsed.new_image_prompt;
+
+                            // Scroll to results
+                            resultsArea.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                            alert("Error: " + resData.error);
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        newBtn.innerHTML = 'Error. Try Again';
+                        newBtn.disabled = false;
+                    });
+            });
+        }
     }
 
     // --- Helper Functions ---

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from agent_core import run_analysis, run_pre_analysis
+from agent_core import run_analysis, run_pre_analysis, apply_changes
 import os
 
 app = Flask(__name__)
@@ -9,6 +9,25 @@ CORS(app)  # Enable CORS for all routes
 @app.route('/', methods=['GET'])
 def health_check():
     return jsonify({"status": "running", "message": "Backend Agent Server is up. Use POST /analyze."})
+
+@app.route('/apply-suggestions', methods=['POST'])
+def apply_suggestions_route():
+    data = request.json or {}
+    print("Received request to apply suggestions...")
+    
+    image = data.get('image')
+    content = data.get('content')
+    suggestions = data.get('suggestions')
+    
+    if not content or not suggestions:
+        return jsonify({"success": False, "error": "Missing content or suggestions"}), 400
+        
+    result_json = apply_changes(image, content, suggestions)
+    
+    if result_json:
+        return jsonify({"success": True, "data": result_json})
+    else:
+        return jsonify({"success": False, "error": "Failed to apply changes"}), 500
 
 @app.route('/analyze', methods=['GET', 'POST'])
 def analyze():

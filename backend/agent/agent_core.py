@@ -113,7 +113,7 @@ def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
         print(f"❌ ERROR during 30-50 agent execution: {e}")
 
     # --- Strategist Agent ---
-    return run_strategist(results, client, load_prompt)
+    return run_strategist(results, client, load_prompt, mode="post")
 
 
 def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group="all"):
@@ -157,7 +157,6 @@ def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group=
             return None
 
     # --- Agents ---
-    # We use a generic prompt structure for visual analysis but customize the persona system instruction.
     
     run_youth = target_group in ["all", "youth"]
     run_adult = target_group in ["all", "adult"]
@@ -173,8 +172,6 @@ def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group=
     if run_youth:
         try:
             print("STEP: Running Youth Agent (Pre)...")
-            # We can reuse the existing system instruction for persona, or send it in the message.
-            # Let's use a fresh chat with specific instructions.
             chat_youth = client.chats.create(
                 model="gemini-2.5-flash",
                 config=types.GenerateContentConfig(
@@ -203,33 +200,59 @@ def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group=
             print(f"❌ Adult Agent Error: {e}")
 
     # --- Strategist Agent ---
-    return run_strategist(results, client, load_prompt)
+    return run_strategist(results, client, load_prompt, mode="pre")
 
 
-def run_strategist(results, client, load_prompt_func):
+def run_strategist(results, client, load_prompt_func, mode="post"):
     """
     Common strategist logic to synthesize results into the final JSON dashboard format.
+    mode: 'post' (includes hashtags) or 'pre' (includes pros/cons)
     """
     if results["youth_analysis"] or results["adult_analysis"]:
         print("-" * 30)
         try:
-            # We need a prompt that forces the JSON output format expected by the frontend
-            # The existing 'negotiate_suggestions.prompt' might return text. 
-            # We should wrap it or enforce JSON. 
-            
             instructions_strategist = load_prompt_func("negotiate_suggestions.prompt")
-            # We append a strong JSON instruction
-            instructions_strategist += """
+            
+            # Dynamic JSON Structure Definition
+            additional_fields = ""
+            if mode == "pre":
+                additional_fields = """
+                "pros_cons": {
+                    "pros": ["list of strong points..."],
+                    "cons": ["list of weak points..."]
+                },
+                """
+            else:
+                additional_fields = """
+                "hashtag_strategy": {
+                    "trending": ["#Trend1", "#Trend2"],
+                    "niche": ["#Niche1", "#Niche2"],
+                    "insight": "Explain why these tags were chosen..."
+                },
+                """
+
+            # Complete JSON Instruction
+            instructions_strategist += f"""
             
             CRITICAL: You must output your response in valid JSON format ONLY. 
             Structure:
-            {
-                "final_verdict": "HTML string with bold verdict and explanation",
+            {{
+                "final_verdict": "HTML string with bold verdict and explanation. Keep it under 50 words.",
+                "tone_analysis": {{
+                    "label": "e.g. Inspirational",
+                    "score": 88
+                }},
+                "engagement_metrics": {{
+                    "score": "8.5/10",
+                    "virality": "High/Medium/Low",
+                    "explanation": "Brief reason"
+                }},
+                {additional_fields}
                 "strategic_suggestions": [
-                    {"title": "...", "priority": "High/Medium", "description": "..."}
+                    {{"title": "...", "priority": "High/Medium", "description": "..."}}
                 ],
                 "shared_positives": ["points that both groups liked..."]
-            }
+            }}
             Do not use markdown code blocks like ```json. Return raw JSON.
             """
             
@@ -259,3 +282,43 @@ def run_strategist(results, client, load_prompt_func):
         results["error"] = "No analysis generated from agents."
 
     return results
+
+def apply_changes(image_b64, text_content, suggestions):
+    """
+    Applies strategic suggestions to the content and generates a new image prompt.
+    """
+    try:
+        client = genai.Client()
+        
+        prompt = f"""
+        You are an expert Copywriter and Creative Director.
+        
+        Original Content: "{text_content}"
+        
+        Strategic Suggestions to Apply:
+        {suggestions}
+        
+        Task:
+        1. Rewrite the caption/text content to incorporate the suggestions. Make it engaging.
+        2. Create a detailed Image Generation Prompt that would result in a visual matching the suggestions.
+        
+        Output JSON:
+        {{
+            "new_content": "...",
+            "new_image_prompt": "..."
+        }}
+        """
+        
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+             config=types.GenerateContentConfig(
+                response_mime_type="application/json"
+            )
+        )
+        
+        return response.text
+        
+    except Exception as e:
+        print(f"❌ Apply Changes Error: {e}")
+        return None
