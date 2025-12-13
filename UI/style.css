@@ -536,3 +536,177 @@ h1 {
         font-size: 2.5rem;
     }
 }
+
+/* --- Selection Screen --- */
+.selection-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.choice-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--card-radius);
+    padding: 2.5rem;
+    flex: 1;
+    min-width: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.choice-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-neon);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.choice-card i {
+    font-size: 2.5rem;
+    color: var(--primary-neon);
+    margin-bottom: 0.5rem;
+}
+
+.choice-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.choice-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- Pre-Upload Form --- */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.drop-zone {
+    width: 100%;
+    height: 200px;
+    border: 2px dashed var(--glass-border);
+    border-radius: var(--card-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+    border-color: var(--primary-neon);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.drop-zone i {
+    font-size: 2.5rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.drop-zone p {
+    color: var(--text-muted);
+}
+
+.drop-zone span {
+    color: var(--primary-neon);
+    font-weight: 600;
+}
+
+.drop-zone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.input-box.area {
+    border-radius: 16px;
+    resize: none;
+    height: 120px;
+    font-family: 'Inter', sans-serif;
+}
+
+.options-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-box.select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+}
+
+.input-box.select option {
+    background: #0a0f18;
+    /* Value from --bg-panel */
+    color: #fff;
+}
+
+.back-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    position: absolute;
+    top: 100px;
+    /* Adjust based on header */
+    left: 10%;
+}
+
+.back-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.analyze-btn.full-width {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 1rem;
+}

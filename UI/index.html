@@ -27,14 +27,75 @@
         </header>
 
         <main>
-            <div class="hero-section">
+            <!-- Selection Screen -->
+            <div class="hero-section" id="selectionSection">
                 <h1>Unlock AI-Powered<br>Marketing Insights</h1>
+
+                <div class="selection-container">
+                    <div class="choice-card" id="btnPreUpload">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Pre-Launch Simulation</h3>
+                        <p>Predict audience reaction to your creative before posting. Upload image & content.</p>
+                    </div>
+                    <div class="choice-card" id="btnPostUpload">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Post-Launch Analytics</h3>
+                        <p>Analyze the performance of your live campaign via URL.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post-Launch Section (Hidden) -->
+            <div class="hero-section hidden" id="postUploadSection">
+                <button class="back-btn" onclick="showSelection()">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <h1>Analyze Live Campaign</h1>
 
                 <div class="input-wrapper">
                     <input type="text" class="input-box" id="urlInput"
                         placeholder="Paste your Instagram or LinkedIn post link here...">
                     <button class="analyze-btn" id="analyzeBtn">
                         Analyze <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pre-Launch Section (Hidden) -->
+            <div class="hero-section hidden" id="preUploadSection">
+                <button class="back-btn" onclick="showSelection()">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <h1>Predict Campaign Impact</h1>
+
+                <div class="form-container">
+                    <!-- Image Upload -->
+                    <div class="drop-zone" id="dropZone">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p>Drag & Drop your poster here or <span>Browse</span></p>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                        <div id="filePreview" class="hidden"></div>
+                    </div>
+
+                    <!-- Content -->
+                    <textarea class="input-box area" id="contentInput"
+                        placeholder="Enter your caption, hashtags, and context..."></textarea>
+
+                    <!-- Options -->
+                    <div class="options-row">
+                        <select class="input-box select" id="platformSelect">
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="instagram">Instagram</option>
+                        </select>
+                        <select class="input-box select" id="targetSelect">
+                            <option value="all">All Demographics</option>
+                            <option value="youth">Youth (18-30)</option>
+                            <option value="adult">Adult (30-50)</option>
+                        </select>
+                    </div>
+
+                    <button class="analyze-btn full-width" id="predictBtn">
+                        Simulate Reaction <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </button>
                 </div>
             </div>
