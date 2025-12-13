@@ -1,10 +1,15 @@
-from google import genai
-from google.genai import types
+from google import generativeai as genai
 from tools.load_json import load_linkedin_comments
 import os
 import base64
 import io
 from PIL import Image
+import json
+
+# Configure Gemini API
+api_key = os.environ.get('GEMINI_API_KEY')
+if api_key:
+    genai.configure(api_key=api_key)
 
 def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
     """
@@ -21,10 +26,12 @@ def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
     print(f"STEP 1: Starting analysis on {data_file} for {platform}...")
 
     try:
-        client = genai.Client()
-        print("STEP 2: Client created successfully.")
+        # Test API configuration
+        if not os.environ.get('GEMINI_API_KEY'):
+            raise Exception("GEMINI_API_KEY environment variable not set")
+        print("STEP 2: API configured successfully.")
     except Exception as e:
-        error_msg = f"Failed to create genai client: {e}"
+        error_msg = f"Failed to configure genai: {e}"
         print(f"❌ ERROR: {error_msg}")
         results["error"] = error_msg
         return results
@@ -62,20 +69,22 @@ def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
         
         print(f"STEP 3: Loaded prompt (18-30) for {platform}.")
 
-        chat = client.chats.create(
-            model="gemini-2.5-flash",
-            config=types.GenerateContentConfig(
-                tools=[load_linkedin_comments],
-                system_instruction=instructions
-            )
+        # Load the comments data
+        comments_data = load_linkedin_comments(data_source_name)
+        comments_text = json.dumps(comments_data, indent=2)
+        
+        # Create model with system instruction
+        model = genai.GenerativeModel(
+            model_name='gemini-2.5-flash',
+            system_instruction=instructions
         )
-        print("STEP 4: Chat session (18-30) created.")
+        print("STEP 4: Model (18-30) created.")
 
         print("STEP 5: Sending message to agent (18-30)...")
         
-        response = chat.send_message(
-            message=f"Please load the comments from '{data_source_name}' and analyze them according to the instructions for {platform}."
-        )
+        # Generate response
+        full_prompt = f"Here is the comments data from {platform}:\n\n{comments_text}\n\nPlease analyze these comments according to the instructions for the 18-30 age group."
+        response = model.generate_content(full_prompt)
 
         print("STEP 6: Response (18-30) received.")
         results["youth_analysis"] = response.text
@@ -92,19 +101,18 @@ def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
             
         print(f"STEP 7: Loaded 30-50 prompt for {platform}.")
         
-        chat_30_50 = client.chats.create(
-            model="gemini-2.5-flash", 
-            config=types.GenerateContentConfig(
-                tools=[load_linkedin_comments],
-                system_instruction=instructions_30_50
-            )
+        # Create model with system instruction
+        model_30_50 = genai.GenerativeModel(
+            model_name='gemini-2.5-flash',
+            system_instruction=instructions_30_50
         )
-        print("STEP 8: Chat session (30-50) created.")
+        print("STEP 8: Model (30-50) created.")
         
         print("STEP 9: Sending message to agent (30-50)...")
-        response_30_50 = chat_30_50.send_message(
-            message=f"Please load the comments from '{data_source_name}' and analyze them for the 30-50 age group on {platform}."
-        )
+        
+        # Generate response
+        full_prompt_30_50 = f"Here is the comments data from {platform}:\n\n{comments_text}\n\nPlease analyze these comments according to the instructions for the 30-50 age group."
+        response_30_50 = model_30_50.generate_content(full_prompt_30_50)
         
         print("STEP 10: Response (30-50) received.")
         results["adult_analysis"] = response_30_50.text
@@ -113,7 +121,7 @@ def run_analysis(data_file="linkedin_comments.json", platform="linkedin"):
         print(f"❌ ERROR during 30-50 agent execution: {e}")
 
     # --- Strategist Agent ---
-    return run_strategist(results, client, load_prompt, mode="post")
+    return run_strategist(results, load_prompt, mode="post")
 
 
 def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group="all"):
@@ -136,14 +144,16 @@ def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group=
         
         image_data = base64.b64decode(image_b64)
         image = Image.open(io.BytesIO(image_data))
-        print("STEP 1.5: Image decoded successfully.")
+        print("STEP 2.5: Image decoded successfully.")
     except Exception as e:
         return {"error": f"Invalid image data: {e}"}
 
     try:
-        client = genai.Client()
+        if not os.environ.get('GEMINI_API_KEY'):
+            raise Exception("GEMINI_API_KEY environment variable not set")
+        print("STEP 2: API configured successfully.")
     except Exception as e:
-        return {"error": f"Failed to create genai client: {e}"}
+        return {"error": f"Failed to configure genai: {e}"}
 
     # Helper to load prompts safely
     def load_prompt(filename):
@@ -172,13 +182,11 @@ def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group=
     if run_youth:
         try:
             print("STEP: Running Youth Agent (Pre)...")
-            chat_youth = client.chats.create(
-                model="gemini-2.5-flash",
-                config=types.GenerateContentConfig(
-                    system_instruction="You are a Gen-Z digital native (age 18-24). You are critical of ads. You value authenticity, aesthetics, and humor. You hate corporate speak."
-                )
+            model_youth = genai.GenerativeModel(
+                model_name='gemini-2.5-flash',
+                system_instruction="You are a Gen-Z digital native (age 18-24). You are critical of ads. You value authenticity, aesthetics, and humor. You hate corporate speak."
             )
-            response = chat_youth.send_message(message=[prompt_base, image])
+            response = model_youth.generate_content([prompt_base, image])
             results["youth_analysis"] = response.text
             print("STEP: Youth analysis done.")
         except Exception as e:
@@ -187,23 +195,21 @@ def run_pre_analysis(image_b64, text_content, platform="linkedin", target_group=
     if run_adult:
         try:
             print("STEP: Running Adult Agent (Pre)...")
-            chat_adult = client.chats.create(
-                model="gemini-2.5-flash",
-                config=types.GenerateContentConfig(
-                    system_instruction="You are a working professional (age 35-50). You value clarity, value propositions, and professionalism. You are skeptical of clickbait."
-                )
+            model_adult = genai.GenerativeModel(
+                model_name='gemini-2.5-flash',
+                system_instruction="You are a working professional (age 35-50). You value clarity, value propositions, and professionalism. You are skeptical of clickbait."
             )
-            response = chat_adult.send_message(message=[prompt_base, image])
+            response = model_adult.generate_content([prompt_base, image])
             results["adult_analysis"] = response.text
             print("STEP: Adult analysis done.")
         except Exception as e:
             print(f"❌ Adult Agent Error: {e}")
 
     # --- Strategist Agent ---
-    return run_strategist(results, client, load_prompt, mode="pre")
+    return run_strategist(results, load_prompt, mode="pre")
 
 
-def run_strategist(results, client, load_prompt_func, mode="post"):
+def run_strategist(results, load_prompt_func, mode="post"):
     """
     Common strategist logic to synthesize results into the final JSON dashboard format.
     mode: 'post' (includes hashtags) or 'pre' (includes pros/cons)
@@ -256,11 +262,9 @@ def run_strategist(results, client, load_prompt_func, mode="post"):
             Do not use markdown code blocks like ```json. Return raw JSON.
             """
             
-            chat_strategist = client.chats.create(
-                model="gemini-2.5-flash", 
-                config=types.GenerateContentConfig(
-                    system_instruction=instructions_strategist
-                )
+            model_strategist = genai.GenerativeModel(
+                model_name='gemini-2.5-flash',
+                system_instruction=instructions_strategist
             )
             
             strategist_message = f"""
@@ -271,7 +275,7 @@ def run_strategist(results, client, load_prompt_func, mode="post"):
             """
             
             print("STEP: Sending to Strategist...")
-            response_strategist = chat_strategist.send_message(message=strategist_message)
+            response_strategist = model_strategist.generate_content(strategist_message)
             results["strategy"] = response_strategist.text
             print("STEP: Strategist done.")
             
@@ -288,7 +292,10 @@ def apply_changes(image_b64, text_content, suggestions):
     Applies strategic suggestions to the content and generates a new image prompt.
     """
     try:
-        client = genai.Client()
+        model = genai.GenerativeModel(
+            model_name='gemini-2.5-flash',
+            generation_config={"response_mime_type": "application/json"}
+        )
         
         prompt = f"""
         You are an expert Copywriter and Creative Director.
@@ -309,13 +316,7 @@ def apply_changes(image_b64, text_content, suggestions):
         }}
         """
         
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-             config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
-        )
+        response = model.generate_content(prompt)
         
         return response.text
         
